@@ -2,338 +2,2067 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>RecruitX | Professional Staffing Solutions</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Professional RecruitX Company providing Permanent Staffing, Contract Hiring, Executive Search and Recruitment Services.">
+    <meta name="description"
+          content="Human Resource Recruitment Agency - Professional recruitment, staffing, executive search and HR solutions for businesses and job seekers.">
 
-<meta name="keywords" content="RecruitX, Staffing, Recruitment Agency, Jobs, Hiring">
+    <meta name="keywords"
+          content="Human Resource Recruitment Agency, HR Recruitment, Recruitment Agency, Staffing, Jobs, Executive Search, Hiring">
 
-<link rel="stylesheet" href="style.css">
+    <meta name="author"
+          content="Human Resource Recruitment Agency">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>
+        Human Resource Recruitment Agency | Professional Recruitment & Staffing
+    </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <!-- =====================================================
+         MAIN CSS
+         PART 2 ME COMPLETE CSS ADD HOGA
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           GLOBAL VARIABLES
+        ================================================= */
+
+        :root {
+
+            --primary: #082238;
+            --primary-light: #103b5c;
+
+            --blue: #0879d1;
+            --blue-dark: #0561a7;
+            --cyan: #19b5ec;
+
+            --white: #ffffff;
+            --black: #111827;
+
+            --background: #f5f8fb;
+            --light-blue: #edf7fd;
+
+            --text: #334155;
+            --muted: #68798a;
+
+            --border: #dce5ec;
+
+            --success: #16845c;
+
+            --shadow:
+                0 18px 55px rgba(8, 34, 56, 0.10);
+
+            --radius: 18px;
+
+            --transition: all 0.35s ease;
+        }
+
+
+        /* =================================================
+           RESET
+        ================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--text);
+
+            background: var(--white);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+        }
+
+
+        button,
+        input,
+        select,
+        textarea {
+
+            font-family: inherit;
+        }
+
+
+        .container {
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+        }
+
+
+        /* =================================================
+           TOP INFORMATION BAR
+        ================================================= */
+
+        .top-bar {
+
+            background: var(--primary);
+
+            color: #dbe8f1;
+
+            font-size: 13px;
+        }
+
+
+        .top-bar-inner {
+
+            min-height: 38px;
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .top-bar a {
+
+            transition: var(--transition);
+        }
+
+
+        .top-bar a:hover {
+
+            color: var(--white);
+        }
+
+
+        /* =================================================
+           MAIN NAVIGATION
+        ================================================= */
+
+        .navbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 9999;
+
+            background: rgba(255,255,255,0.97);
+
+            border-bottom: 1px solid rgba(8,34,56,0.08);
+
+            backdrop-filter: blur(12px);
+
+            transition: var(--transition);
+        }
+
+
+        .navbar.scrolled {
+
+            box-shadow:
+                0 8px 30px rgba(8,34,56,0.10);
+        }
+
+
+        .nav-inner {
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* =================================================
+           BRAND
+        ================================================= */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            flex-shrink: 0;
+        }
+
+
+        .brand-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 9px;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--blue)
+                );
+
+            color: var(--white);
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 20px rgba(8,121,209,0.20);
+        }
+
+
+        .brand-name {
+
+            color: var(--primary);
+
+            font-size: 18px;
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            max-width: 230px;
+        }
+
+
+        .brand-name span {
+
+            display: block;
+
+            color: var(--blue);
+
+            font-size: 11px;
+
+            letter-spacing: 1.3px;
+
+            margin-top: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =================================================
+           NAVIGATION LINKS
+        ================================================= */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: #344556;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--blue);
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -9px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--blue);
+
+            transition: var(--transition);
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+        }
+
+
+        /* =================================================
+           NAV BUTTONS
+        ================================================= */
+
+        .nav-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+        }
+
+
+        .nav-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 11px 16px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+
+        .nav-btn-outline {
+
+            border: 1px solid var(--primary);
+
+            color: var(--primary);
+        }
+
+
+        .nav-btn-outline:hover {
+
+            background: var(--primary);
+
+            color: var(--white);
+        }
+
+
+        .nav-btn-primary {
+
+            background: var(--blue);
+
+            color: var(--white);
+        }
+
+
+        .nav-btn-primary:hover {
+
+            background: var(--blue-dark);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 22px rgba(8,121,209,0.25);
+        }
+
+
+        /* =================================================
+           MOBILE MENU BUTTON
+        ================================================= */
+
+        .menu-toggle {
+
+            display: none;
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid var(--border);
+
+            background: var(--white);
+
+            color: var(--primary);
+
+            border-radius: 7px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        /* =================================================
+           HERO SECTION
+        ================================================= */
+
+        .hero {
+
+            min-height: 650px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            color: var(--white);
+
+            background:
+
+                linear-gradient(
+                    110deg,
+                    rgba(5,25,42,0.99),
+                    rgba(8,54,84,0.96),
+                    rgba(6,104,157,0.90)
+                );
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 580px;
+
+            height: 580px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,0.08);
+
+            right: -220px;
+
+            top: -180px;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+
+            height: 400px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,0.07);
+
+            right: 120px;
+
+            bottom: -280px;
+        }
+
+
+        .hero-grid {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1.08fr 0.92fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* =================================================
+           HERO CONTENT
+        ================================================= */
+
+        .hero-content {
+
+            max-width: 720px;
+        }
+
+
+        .hero-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #7edaff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.7px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-label::before {
+
+            content: "";
+
+            width: 30px;
+
+            height: 2px;
+
+            background: var(--cyan);
+        }
+
+
+        .hero h1 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(42px, 5vw, 68px);
+
+            line-height: 1.08;
+
+            margin-bottom: 24px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .hero h1 span {
+
+            display: block;
+
+            color: #69d5ff;
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color: #d4e4ee;
+
+            font-size: 17px;
+
+            margin-bottom: 32px;
+        }
+
+
+        /* =================================================
+           HERO BUTTONS
+        ================================================= */
+
+        .hero-buttons {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 14px 22px;
+
+            border-radius: 7px;
+
+            border: 1px solid transparent;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+
+        .btn-white {
+
+            background: var(--white);
+
+            color: var(--primary);
+        }
+
+
+        .btn-white:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.18);
+        }
+
+
+        .btn-outline-white {
+
+            color: var(--white);
+
+            border-color:
+                rgba(255,255,255,0.45);
+        }
+
+
+        .btn-outline-white:hover {
+
+            background: var(--white);
+
+            color: var(--primary);
+        }
+
+
+        .btn-blue {
+
+            background: var(--blue);
+
+            color: var(--white);
+        }
+
+
+        .btn-blue:hover {
+
+            background: var(--blue-dark);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(8,121,209,0.25);
+        }
+
+
+        /* =================================================
+           HERO DASHBOARD
+        ================================================= */
+
+        .hero-dashboard {
+
+            position: relative;
+        }
+
+
+        .dashboard-card {
+
+            background: var(--white);
+
+            color: var(--text);
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 30px 70px
+                rgba(0,0,0,0.27);
+
+            transform: rotate(1deg);
+        }
+
+
+        .dashboard-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+        }
+
+
+        .dashboard-title {
+
+            color: var(--primary);
+
+            font-weight: 800;
+        }
+
+
+        .live-status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: var(--success);
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        .live-status::before {
+
+            content: "";
+
+            width: 7px;
+
+            height: 7px;
+
+            background: var(--success);
+
+            border-radius: 50%;
+        }
+
+
+        .candidate-match {
+
+            padding: 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .candidate-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 11px;
+        }
+
+
+        .candidate-name {
+
+            color: var(--primary);
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        .match-percent {
+
+            color: var(--blue);
+
+            font-weight: 800;
+        }
+
+
+        .progress-bar {
+
+            height: 6px;
+
+            background: #e9eef3;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-bar span {
+
+            display: block;
+
+            height: 100%;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--cyan)
+                );
+        }
+
+
+        .candidate-meta {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            margin-top: 8px;
+        }
+
+
+        .dashboard-badge {
+
+            position: absolute;
+
+            right: -25px;
+
+            bottom: -25px;
+
+            background: var(--white);
+
+            color: var(--primary);
+
+            padding: 16px 20px;
+
+            border-radius: 12px;
+
+            box-shadow: var(--shadow);
+
+            font-weight: 700;
+
+            font-size: 12px;
+        }
+
+
+        .dashboard-badge strong {
+
+            display: block;
+
+            color: var(--blue);
+
+            font-size: 24px;
+
+            line-height: 1.1;
+        }
+
+
+        /* =================================================
+           SEARCH SECTION
+        ================================================= */
+
+        .search-wrapper {
+
+            position: relative;
+
+            z-index: 10;
+
+            margin-top: -45px;
+        }
+
+
+        .search-card {
+
+            background: var(--white);
+
+            padding: 23px;
+
+            border-radius: 13px;
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .search-title {
+
+            color: var(--primary);
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            margin-bottom: 14px;
+        }
+
+
+        .search-title i {
+
+            color: var(--blue);
+
+            margin-right: 7px;
+        }
+
+
+        .search-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1.2fr 1fr 1fr auto;
+
+            gap: 10px;
+        }
+
+
+        .search-field {
+
+            position: relative;
+        }
+
+
+        .search-field i {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #718395;
+        }
+
+
+        .search-field input,
+        .search-field select {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding:
+                0 13px 0 40px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 7px;
+
+            outline: none;
+
+            color: var(--text);
+
+            background: var(--white);
+        }
+
+
+        .search-field input:focus,
+        .search-field select:focus {
+
+            border-color: var(--blue);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(8,121,209,0.10);
+        }
+
+
+        /* =================================================
+           SECTION BASE
+        ================================================= */
+
+        .section {
+
+            padding: 100px 0;
+        }
+
+
+        .section-light {
+
+            background: var(--background);
+        }
+
+
+        .section-heading {
+
+            max-width: 750px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .section-heading.center {
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+            text-align: center;
+        }
+
+
+        .section-label {
+
+            display: block;
+
+            color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-heading h2 {
+
+            color: var(--primary);
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(32px, 4vw, 47px);
+
+            line-height: 1.15;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-heading p {
+
+            color: var(--muted);
+
+            font-size: 16px;
+        }
+
+
+        /* =================================================
+           RESPONSIVE PART 1
+        ================================================= */
+
+        @media(max-width: 1050px) {
+
+            .nav-links {
+
+                gap: 15px;
+            }
+
+
+            .nav-actions {
+
+                display: none;
+            }
+
+
+            .hero-grid {
+
+                grid-template-columns: 1fr;
+
+                padding:
+                    75px 0;
+            }
+
+
+            .hero-dashboard {
+
+                max-width: 620px;
+            }
+
+
+            .search-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 780px) {
+
+            .top-bar {
+
+                display: none;
+            }
+
+
+            .nav-inner {
+
+                min-height: 70px;
+            }
+
+
+            .menu-toggle {
+
+                display: grid;
+
+                place-items: center;
+            }
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: var(--white);
+
+                padding: 22px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                border-top:
+                    1px solid var(--border);
+
+                box-shadow:
+                    0 15px 35px
+                    rgba(0,0,0,0.08);
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .hero {
+
+                min-height: auto;
+            }
+
+
+            .hero h1 {
+
+                font-size: 43px;
+            }
+
+
+            .search-wrapper {
+
+                margin-top: 20px;
+            }
+
+
+            .search-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media(max-width: 560px) {
+
+            .section {
+
+                padding: 70px 0;
+            }
+
+
+            .brand-name {
+
+                font-size: 15px;
+
+                max-width: 180px;
+            }
+
+
+            .brand-name span {
+
+                font-size: 9px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 36px;
+            }
+
+
+            .hero-description {
+
+                font-size: 15px;
+            }
+
+
+            .hero-buttons .btn {
+
+                width: 100%;
+            }
+
+
+            .dashboard-card {
+
+                transform: none;
+            }
+
+
+            .dashboard-badge {
+
+                right: 5px;
+            }
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<!--================ HEADER START ================-->
 
-<header>
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
 
-<div class="container">
+<div class="top-bar">
 
-<div class="logo">
+    <div class="container top-bar-inner">
 
-<h2>HR<span>RecruitX</span></h2>
+        <a href="#jobs">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Job Search
+        </a>
 
-</div>
+        <a href="#candidate">
+            I'm a Candidate
+        </a>
 
-<nav>
+        <a href="#employer">
+            I'm an Employer
+        </a>
 
-<ul id="menu">
+        <a href="#">
+            EN
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
 
-<li><a href="#">Home</a></li>
-
-<li><a href="#">About</a></li>
-
-<li><a href="#">Services</a></li>
-
-<li><a href="#">Jobs</a></li>
-
-<li><a href="#">Employers</a></li>
-
-<li><a href="#">Candidates</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-<div class="menu-btn">
-
-<i class="fa-solid fa-bars"></i>
+    </div>
 
 </div>
 
-</nav>
 
-</div>
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
 
-</header>
+<header class="navbar" id="navbar">
 
-<!--================ HERO SECTION ================-->
+    <div class="container nav-inner">
 
-<section class="hero">
 
-<div class="container hero-grid">
+        <!-- BRAND -->
 
-<div class="hero-content">
+        <a href="#" class="brand">
 
-<h5>Professional RecruitX Company</h5>
+            <div class="brand-icon">
 
-<h1>
-
-Connecting
-
-<span>Top Talent</span>
-
-With
-
-Leading Companies
-
-</h1>
-
-<p>
-
-We provide Permanent Hiring,
-
-Contract Staffing,
-
-Executive Search,
-
-IT Recruitment,
-
-Bulk Hiring,
-
-Payroll Solutions,
-
-and HR Consulting Services across India.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#" class="btn">
-
-Hire Talent
-
-</a>
-
-<a href="#" class="btn btn-outline">
-
-Find Jobs
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="images/hero.png" alt="RecruitX">
-
-</div>
-
-</div>
-
-</section>
-
-<!--================ SEARCH SECTION ================-->
-
-<section class="search-section">
-
-<div class="container">
-
-<form class="search-box">
-
-<input
-
-type="text"
-
-placeholder="Job Title">
-
-<input
-
-type="text"
-
-placeholder="Location">
-
-<select>
-
-<option>
-
-Experience
-
-</option>
-
-<option>
-
-Fresher
-
-</option>
-
-<option>
-
-1-3 Years
-
-</option>
-
-<option>
-
-3-5 Years
-
-</option>
-
-<option>
-
-5+ Years
-
-</option>
-
-</select>
-
-<button>
-
-Search Jobs
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!--================ STATS SECTION ================-->
-
-<section class="stats">
-
-<div class="container stats-grid">
-
-<div class="stat-box">
-
-<h2>15+</h2>
-
-<p>Years Experience</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>500+</h2>
-
-<p>Corporate Clients</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>25000+</h2>
-
-<p>Successful Placements</p>
-
-</div>
-
-<div class="stat-box">
-
-<h2>98%</h2>
-
-<p>Client Satisfaction</p>
-
-</div>
-<!-- ================= ABOUT SECTION ================= -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-            <!-- Left Image -->
-
-            <div class="about-image">
-
-                <img src="images/about.jpg" alt="About RecruitX">
+                <i class="fa-solid fa-people-group"></i>
 
             </div>
 
-            <!-- Right Content -->
 
-            <div class="about-content">
+            <div class="brand-name">
 
-                <span class="section-subtitle">
-                    ABOUT OUR COMPANY
+                HUMAN RESOURCE
+                RECRUITMENT AGENCY
+
+                <span>
+                    PEOPLE • TALENT • OPPORTUNITY
                 </span>
 
-                <h2>
-                    Building Strong Teams With
-                    <span>Top Talent</span>
-                </h2>
+            </div>
 
-                <p>
+        </a>
 
-                    We are one of India's leading HR Recruitment &
-                    Staffing Companies providing Permanent Hiring,
-                    Executive Search, Contract Staffing,
-                    Payroll Management and Recruitment Process
-                    Outsourcing solutions.
 
-                </p>
+        <!-- NAVIGATION -->
 
-                <p>
+        <nav class="nav-links" id="navLinks">
 
-                    Our experienced recruiters connect highly
-                    qualified professionals with top companies
-                    across multiple industries while ensuring
-                    quality hiring and faster recruitment.
+            <a href="#about">
+                About Us
+            </a>
 
-                </p>
+            <a href="#expertise">
+                Expertise
+            </a>
 
-                <div class="about-list">
+            <a href="#services">
+                Services
+            </a>
 
-                    <div class="about-item">
+            <a href="#jobs">
+                Jobs
+            </a>
 
-                        <i class="fa-solid fa-circle-check"></i>
+            <a href="#team">
+                Our Team
+            </a>
 
-                        <span>
-                            Professional Recruitment Consultants
-                        </span>
+            <a href="#insights">
+                Insights
+            </a>
 
-                    </div>
+            <a href="#contact">
+                Contact
+            </a>
 
-                    <div class="about-item">
+        </nav>
 
-                        <i class="fa-solid fa-circle-check"></i>
 
-                        <span>
-                            Fast & Reliable Hiring Solutions
-                        </span>
+        <!-- ACTIONS -->
 
-                    </div>
+        <div class="nav-actions">
 
-                    <div class="about-item">
+            <a href="#jobs"
+               class="nav-btn nav-btn-outline">
 
-                        <i class="fa-solid fa-circle-check"></i>
+                Find Jobs
 
-                        <span>
-                            Pan India Recruitment Network
-                        </span>
+            </a>
 
-                    </div>
 
-                    <div class="about-item">
+            <a href="#contact"
+               class="nav-btn nav-btn-primary">
 
-                        <i class="fa-solid fa-circle-check"></i>
+                Hire Talent
 
-                        <span>
-                            Verified & Skilled Candidates
-                        </span>
+            </a>
 
-                    </div>
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+
+        <!-- HERO LEFT -->
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+
+                HUMAN RESOURCE RECRUITMENT AGENCY
+
+            </span>
+
+
+            <h1>
+
+                Connecting exceptional
+                people with exceptional
+                <span>opportunities.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                We help organisations find the right people
+                and help professionals build meaningful careers
+                through specialist recruitment, staffing and
+                human resource solutions.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a href="#jobs"
+                   class="btn btn-white">
+
+                    Explore Jobs
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="#contact"
+                   class="btn btn-outline-white">
+
+                    Hire Top Talent
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO RIGHT -->
+
+        <div class="hero-dashboard">
+
+
+            <div class="dashboard-card">
+
+
+                <div class="dashboard-header">
+
+                    <span class="dashboard-title">
+
+                        Talent Matching
+
+                    </span>
+
+
+                    <span class="live-status">
+
+                        LIVE MATCHING
+
+                    </span>
 
                 </div>
 
-                <a href="#" class="btn">
-                    Learn More
+
+                <!-- MATCH 1 -->
+
+                <div class="candidate-match">
+
+                    <div class="candidate-top">
+
+                        <span class="candidate-name">
+
+                            HR Director
+
+                        </span>
+
+                        <span class="match-percent">
+
+                            94%
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span style="width:94%;"></span>
+
+                    </div>
+
+
+                    <span class="candidate-meta">
+
+                        Leadership • Strategy • People Management
+
+                    </span>
+
+                </div>
+
+
+                <!-- MATCH 2 -->
+
+                <div class="candidate-match">
+
+                    <div class="candidate-top">
+
+                        <span class="candidate-name">
+
+                            Senior Recruiter
+
+                        </span>
+
+                        <span class="match-percent">
+
+                            91%
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span style="width:91%;"></span>
+
+                    </div>
+
+
+                    <span class="candidate-meta">
+
+                        Recruitment • Sourcing • Talent Acquisition
+
+                    </span>
+
+                </div>
+
+
+                <!-- MATCH 3 -->
+
+                <div class="candidate-match">
+
+                    <div class="candidate-top">
+
+                        <span class="candidate-name">
+
+                            HR Business Partner
+
+                        </span>
+
+                        <span class="match-percent">
+
+                            88%
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span style="width:88%;"></span>
+
+                    </div>
+
+
+                    <span class="candidate-meta">
+
+                        People Strategy • Culture • Advisory
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="dashboard-badge">
+
+                <strong>500+</strong>
+
+                Successful Placements
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH AREA
+====================================================== -->
+
+<div class="container search-wrapper"
+     id="jobs">
+
+
+    <div class="search-card">
+
+
+        <div class="search-title">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Find your next career opportunity
+
+        </div>
+
+
+        <form class="search-grid"
+              id="jobSearch">
+
+
+            <!-- KEYWORD -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <input
+                    type="text"
+                    placeholder="Job title or keyword">
+
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <input
+                    type="text"
+                    placeholder="City or location">
+
+            </div>
+
+
+            <!-- FUNCTION -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <select>
+
+                    <option>
+                        Select Function
+                    </option>
+
+                    <option>
+                        Human Resources
+                    </option>
+
+                    <option>
+                        Recruitment
+                    </option>
+
+                    <option>
+                        Talent Acquisition
+                    </option>
+
+                    <option>
+                        Administration
+                    </option>
+
+                    <option>
+                        Finance
+                    </option>
+
+                    <option>
+                        Information Technology
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- JOB TYPE -->
+
+            <div class="search-field">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <select>
+
+                    <option>
+                        Job Type
+                    </option>
+
+                    <option>
+                        Full Time
+                    </option>
+
+                    <option>
+                        Part Time
+                    </option>
+
+                    <option>
+                        Contract
+                    </option>
+
+                    <option>
+                        Temporary
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SEARCH BUTTON -->
+
+            <button
+                type="submit"
+                class="btn btn-blue">
+
+                Search
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PART 2 — STATISTICS + ABOUT + VISION/MISSION
+====================================================== -->
+
+
+<!-- =====================================================
+     STATISTICS
+====================================================== -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <strong class="counter"
+                        data-target="10">
+                    0
+                </strong>
+
+                <span>
+                    Years of Experience
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <strong class="counter"
+                        data-target="500">
+                    0
+                </strong>
+
+                <span>
+                    Successful Placements
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <strong class="counter"
+                        data-target="250">
+                    0
+                </strong>
+
+                <span>
+                    Trusted Employers
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <strong class="counter"
+                        data-target="5000">
+                    0
+                </strong>
+
+                <span>
+                    Candidates Connected
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT HUMAN RESOURCE RECRUITMENT AGENCY
+====================================================== -->
+
+<section class="section about-section"
+         id="about">
+
+    <div class="container about-grid">
+
+
+        <!-- LEFT IMAGE / VISUAL -->
+
+        <div class="about-visual reveal">
+
+            <div class="about-image-main">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+                    alt="Professional Human Resource Recruitment Team">
+
+            </div>
+
+
+            <div class="about-experience-card">
+
+                <strong>
+                    10+
+                </strong>
+
+                <span>
+                    Years of Recruitment
+                    Experience
+                </span>
+
+            </div>
+
+
+            <div class="about-floating-icon">
+
+                <i class="fa-solid fa-handshake"></i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT CONTENT -->
+
+        <div class="about-content reveal">
+
+            <span class="section-label">
+                ABOUT OUR AGENCY
+            </span>
+
+
+            <h2>
+                Connecting people,
+                businesses and
+                <span>opportunities.</span>
+            </h2>
+
+
+            <p class="about-lead">
+
+                Human Resource Recruitment Agency is a
+                professional recruitment and staffing partner
+                helping businesses identify, attract and hire
+                the right talent.
+
+            </p>
+
+
+            <p>
+
+                Our recruitment approach is built around
+                understanding people, roles, business needs
+                and organisational culture. We work closely
+                with employers and candidates to create
+                meaningful and long-term professional
+                connections.
+
+            </p>
+
+
+            <p>
+
+                From entry-level professionals to experienced
+                specialists and senior leadership, our team
+                focuses on delivering efficient, transparent
+                and professional recruitment solutions.
+
+            </p>
+
+
+
+            <!-- CHECK LIST -->
+
+            <div class="about-check-grid">
+
+
+                <div class="about-check">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Professional Recruitment Experts
+                    </span>
+
+                </div>
+
+
+                <div class="about-check">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Candidate-Focused Approach
+                    </span>
+
+                </div>
+
+
+                <div class="about-check">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Employer-Focused Solutions
+                    </span>
+
+                </div>
+
+
+                <div class="about-check">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Transparent Recruitment Process
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="about-buttons">
+
+                <a href="#services"
+                   class="btn btn-blue">
+
+                    Explore Our Services
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -344,176 +2073,837 @@ Search Jobs
 
 </section>
 
-<!-- ================= VISION & MISSION ================= -->
 
-<section class="vision-mission">
+
+<!-- =====================================================
+     VISION / MISSION / VALUES
+====================================================== -->
+
+<section class="section section-light"
+         id="vision">
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
+                WHAT DRIVES US
+            </span>
 
             <h2>
-                Vision & Mission
+                Built around people
+                and possibilities.
             </h2>
 
             <p>
 
-                We help organizations hire the best professionals
-                while creating rewarding career opportunities
-                for talented candidates.
+                Our purpose is simple — to create better
+                connections between talented professionals
+                and organisations looking for exceptional
+                people.
 
             </p>
 
         </div>
 
-        <div class="vision-grid">
 
-            <div class="vision-card">
 
-                <div class="icon">
+        <div class="purpose-grid">
+
+
+            <!-- VISION -->
+
+            <article class="purpose-card reveal">
+
+                <div class="purpose-icon">
 
                     <i class="fa-solid fa-eye"></i>
 
                 </div>
 
-                <h3>
-                    Our Vision
-                </h3>
 
-                <p>
+                <div class="purpose-content">
 
-                    To become India's most trusted HR Recruitment
-                    company delivering world-class staffing
-                    solutions with innovation and integrity.
+                    <span class="purpose-number">
+                        01
+                    </span>
 
-                </p>
+                    <h3>
+                        Our Vision
+                    </h3>
 
-            </div>
+                    <p>
 
-            <div class="vision-card">
+                        To become a trusted recruitment partner
+                        recognised for connecting exceptional
+                        talent with organisations where people
+                        and businesses can grow together.
 
-                <div class="icon">
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MISSION -->
+
+            <article class="purpose-card reveal">
+
+                <div class="purpose-icon">
 
                     <i class="fa-solid fa-bullseye"></i>
 
                 </div>
 
-                <h3>
-                    Our Mission
-                </h3>
 
-                <p>
+                <div class="purpose-content">
 
-                    Empower businesses by providing exceptional
-                    talent while helping job seekers build
-                    successful careers.
+                    <span class="purpose-number">
+                        02
+                    </span>
 
-                </p>
+                    <h3>
+                        Our Mission
+                    </h3>
 
-            </div>
+                    <p>
 
-            <div class="vision-card">
+                        To provide professional, responsive and
+                        transparent recruitment solutions while
+                        creating valuable career opportunities
+                        for candidates and sustainable hiring
+                        solutions for employers.
 
-                <div class="icon">
-
-                    <i class="fa-solid fa-handshake"></i>
+                    </p>
 
                 </div>
 
+            </article>
+
+
+
+            <!-- VALUES -->
+
+            <article class="purpose-card reveal">
+
+                <div class="purpose-icon">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+
+                <div class="purpose-content">
+
+                    <span class="purpose-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Our Values
+                    </h3>
+
+                    <p>
+
+                        Integrity, professionalism, transparency,
+                        respect, accountability and a genuine
+                        commitment to the success of our
+                        candidates and clients.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY CHOOSE US
+====================================================== -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
+                WHY CHOOSE US
+            </span>
+
+            <h2>
+                Recruitment with a
+                human approach.
+            </h2>
+
+            <p>
+
+                We combine specialist recruitment knowledge,
+                professional communication and a people-first
+                approach to deliver better hiring experiences.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+                    <span>
+                        01
+                    </span>
+
+                </div>
+
+
                 <h3>
-                    Our Values
+                    Experienced Recruiters
                 </h3>
 
                 <p>
 
-                    Integrity, Transparency,
-                    Professionalism,
-                    Commitment,
-                    Innovation,
-                    Customer Satisfaction.
+                    Our recruitment professionals understand
+                    the importance of skills, experience,
+                    attitude and cultural fit.
 
                 </p>
 
-            </div>
-        </div>
-    </div>
-          
-</section>  
-          
-<!-- ========================================= -->
-<!-- OUR RECRUITMENT SERVICES -->
-<!-- ========================================= -->
 
-<section class="services" id="services">
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <span>
+                        02
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Targeted Hiring
+                </h3>
+
+                <p>
+
+                    We focus on understanding each requirement
+                    and identifying candidates who match the
+                    specific needs of the organisation.
+
+                </p>
+
+
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-comments"></i>
+
+                    </div>
+
+                    <span>
+                        03
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Clear Communication
+                </h3>
+
+                <p>
+
+                    From first conversation to final selection,
+                    we maintain professional and transparent
+                    communication with clients and candidates.
+
+                </p>
+
+
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                    </div>
+
+                    <span>
+                        04
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Faster Hiring
+                </h3>
+
+                <p>
+
+                    Our structured recruitment process helps
+                    organisations reduce hiring delays and
+                    connect with suitable candidates faster.
+
+                </p>
+
+
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+
+            <!-- CARD 5 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <span>
+                        05
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Professional Standards
+                </h3>
+
+                <p>
+
+                    We focus on professionalism, confidentiality,
+                    candidate experience and responsible
+                    recruitment practices.
+
+                </p>
+
+
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+
+            <!-- CARD 6 -->
+
+            <div class="why-card reveal">
+
+                <div class="why-card-top">
+
+                    <div class="why-icon">
+
+                        <i class="fa-solid fa-handshake-angle"></i>
+
+                    </div>
+
+                    <span>
+                        06
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Long-Term Partnerships
+                </h3>
+
+                <p>
+
+                    We aim to build lasting relationships with
+                    employers and professionals rather than
+                    simply filling a vacancy.
+
+                </p>
+
+
+                <a href="#contact">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION DIVIDER / CTA STRIP
+====================================================== -->
+
+<section class="mini-cta">
+
+    <div class="container mini-cta-inner">
+
+
+        <div class="mini-cta-icon">
+
+            <i class="fa-solid fa-people-arrows"></i>
+
+        </div>
+
+
+        <div class="mini-cta-content">
+
+            <span>
+                LOOKING FOR THE RIGHT PEOPLE?
+            </span>
+
+            <h3>
+                Let our recruitment specialists
+                help you build your team.
+            </h3>
+
+        </div>
+
+
+        <a href="#contact"
+           class="btn btn-white">
+
+            Talk to Our Team
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PART 3 — SERVICES + INDUSTRIES
+====================================================== -->
+
+
+<!-- =====================================================
+     SERVICES SECTION
+====================================================== -->
+
+<section class="section services-section"
+         id="services">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <span class="section-subtitle">
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
                 OUR SERVICES
             </span>
 
             <h2>
-                Complete HR Recruitment Solutions
+                Recruitment solutions
+                designed around your needs.
             </h2>
 
             <p>
-                We provide end-to-end recruitment and staffing
-                solutions for businesses of every size across India.
+
+                From individual hiring requirements to
+                complete workforce solutions, our services
+                are designed to support businesses at every
+                stage of their talent journey.
+
             </p>
 
         </div>
+
+
 
         <div class="services-grid">
 
-            <div class="service-card">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>Permanent Hiring</h3>
-                <p>Professional recruitment for full-time employees.</p>
-            </div>
 
-            <div class="service-card">
-                <i class="fa-solid fa-users"></i>
-                <h3>Contract Staffing</h3>
-                <p>Temporary and project-based workforce solutions.</p>
-            </div>
+            <!-- SERVICE 01 -->
 
-            <div class="service-card">
-                <i class="fa-solid fa-briefcase"></i>
-                <h3>Executive Search</h3>
-                <p>Leadership hiring for senior management positions.</p>
-            </div>
+            <article class="service-card reveal">
 
-            <div class="service-card">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>IT Recruitment</h3>
-                <p>Software, Cloud, AI, Cyber Security and IT professionals.</p>
-            </div>
+                <div class="service-number">
+                    01
+                </div>
 
-            <div class="service-card">
-                <i class="fa-solid fa-money-check-dollar"></i>
-                <h3>Payroll Services</h3>
-                <p>Payroll processing, compliance and salary management.</p>
-            </div>
+                <div class="service-icon">
 
-            <div class="service-card">
-                <i class="fa-solid fa-user-check"></i>
-                <h3>Background Verification</h3>
-                <p>Identity, education and employment verification.</p>
-            </div>
+                    <i class="fa-solid fa-user-plus"></i>
 
-            <div class="service-card">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h3>Campus Hiring</h3>
-                <p>Fresh talent recruitment from colleges and universities.</p>
-            </div>
+                </div>
 
-            <div class="service-card">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>HR Consulting</h3>
-                <p>Professional HR advisory and recruitment strategy.</p>
-            </div>
+                <h3>
+                    Permanent Hiring
+                </h3>
+
+                <p>
+
+                    Find qualified professionals for permanent
+                    positions with a recruitment process focused
+                    on skills, experience and cultural fit.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 02 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-users-gear"></i>
+
+                </div>
+
+                <h3>
+                    Contract Staffing
+                </h3>
+
+                <p>
+
+                    Flexible workforce solutions for
+                    organisations requiring skilled professionals
+                    for short-term or project-based requirements.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 03 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                </div>
+
+                <h3>
+                    Executive Search
+                </h3>
+
+                <p>
+
+                    Specialist search solutions for senior,
+                    leadership and critical roles where the
+                    right talent can make a significant impact.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 04 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+                <h3>
+                    IT Recruitment
+                </h3>
+
+                <p>
+
+                    Connect with technology professionals across
+                    software development, infrastructure, data,
+                    cybersecurity and digital functions.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 05 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-money-check-dollar"></i>
+
+                </div>
+
+                <h3>
+                    Payroll Services
+                </h3>
+
+                <p>
+
+                    Streamline workforce administration with
+                    professional payroll support and structured
+                    employee management solutions.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 06 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+                <h3>
+                    Background Verification
+                </h3>
+
+                <p>
+
+                    Support your hiring process with structured
+                    candidate verification and professional
+                    pre-employment screening.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 07 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    07
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <h3>
+                    Campus Hiring
+                </h3>
+
+                <p>
+
+                    Help organisations discover emerging
+                    talent through structured campus recruitment
+                    and early-career hiring programmes.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SERVICE 08 -->
+
+            <article class="service-card reveal">
+
+                <div class="service-number">
+                    08
+                </div>
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <h3>
+                    HR Consulting
+                </h3>
+
+                <p>
+
+                    Practical HR support to help organisations
+                    strengthen workforce planning, hiring
+                    processes and people strategies.
+
+                </p>
+
+                <a href="#contact">
+
+                    Explore Service
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
 
         </div>
 
@@ -521,559 +2911,2343 @@ Search Jobs
 
 </section>
 
-<!-- ========================================= -->
-<!-- INDUSTRIES WE SERVE -->
-<!-- ========================================= -->
 
-<section class="industries">
 
-    <div class="container">
+<!-- =====================================================
+     SERVICES CTA
+====================================================== -->
 
-        <div class="section-title">
+<section class="service-banner">
 
-            <span class="section-subtitle">
-                INDUSTRIES
+    <div class="container service-banner-inner">
+
+
+        <div>
+
+            <span>
+                FOR EMPLOYERS
             </span>
 
             <h2>
-                Industries We Serve
+                Have a hiring requirement?
             </h2>
 
             <p>
-                Our recruitment experts specialize across multiple
-                industries and business sectors.
+                Tell us what kind of talent you are looking for.
+                Our team will help you identify the right
+                recruitment solution.
             </p>
 
         </div>
 
-        <div class="industry-grid">
 
-            <div class="industry-card">
-                <i class="fa-solid fa-building-columns"></i>
-                <h4>Banking & Finance</h4>
-            </div>
+        <a href="#contact"
+           class="btn btn-white">
 
-            <div class="industry-card">
-                <i class="fa-solid fa-laptop"></i>
-                <h4>Information Technology</h4>
-            </div>
+            Submit a Requirement
 
-            <div class="industry-card">
-                <i class="fa-solid fa-gears"></i>
-                <h4>Manufacturing</h4>
-            </div>
+            <i class="fa-solid fa-arrow-right"></i>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-stethoscope"></i>
-                <h4>Healthcare</h4>
-            </div>
+        </a>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <h4>Retail & FMCG</h4>
-            </div>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-truck-fast"></i>
-                <h4>Logistics</h4>
-            </div>
+    </div>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-building"></i>
-                <h4>Construction</h4>
-            </div>
+</section>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-headset"></i>
-                <h4>BPO & Customer Support</h4>
-            </div>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-plane"></i>
-                <h4>Aviation</h4>
-            </div>
 
-            <div class="industry-card">
-                <i class="fa-solid fa-hotel"></i>
-                <h4>Hospitality</h4>
-            </div>
+<!-- =====================================================
+     INDUSTRIES SECTION
+====================================================== -->
 
-            <div class="industry-card">
-                <i class="fa-solid fa-school"></i>
-                <h4>Education</h4>
-            </div>
+<section class="section section-light"
+         id="expertise">
 
-            <div class="industry-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h4>Energy & Utilities</h4>
+    <div class="container">
+
+
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
+                INDUSTRY EXPERTISE
+            </span>
+
+            <h2>
+                Specialist recruitment across
+                key industries.
+            </h2>
+
+            <p>
+
+                Our recruitment expertise supports organisations
+                across a broad range of sectors and professional
+                functions.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="industries-grid">
+
+
+            <!-- INDUSTRY 01 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-laptop"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Information Technology
+                    </h3>
+
+                    <p>
+                        Technology & Digital Talent
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 02 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-coins"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Banking & Finance
+                    </h3>
+
+                    <p>
+                        Finance & Financial Services
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 03 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Healthcare
+                    </h3>
+
+                    <p>
+                        Healthcare & Life Sciences
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 04 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-industry"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Manufacturing
+                    </h3>
+
+                    <p>
+                        Industrial & Engineering
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 05 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Retail & E-Commerce
+                    </h3>
+
+                    <p>
+                        Consumer & Retail Talent
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 06 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Logistics & Supply Chain
+                    </h3>
+
+                    <p>
+                        Operations & Supply Chain
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 07 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-building"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Real Estate
+                    </h3>
+
+                    <p>
+                        Property & Infrastructure
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 08 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sales & Marketing
+                    </h3>
+
+                    <p>
+                        Commercial & Business Development
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 09 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-helmet-safety"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Construction
+                    </h3>
+
+                    <p>
+                        Engineering & Project Talent
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 10 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-hotel"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Hospitality
+                    </h3>
+
+                    <p>
+                        Hospitality & Service Professionals
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 11 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Energy & Utilities
+                    </h3>
+
+                    <p>
+                        Energy & Technical Professionals
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
+
+
+            <!-- INDUSTRY 12 -->
+
+            <a href="#contact"
+               class="industry-card reveal">
+
+                <div class="industry-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        BPO & Customer Service
+                    </h3>
+
+                    <p>
+                        Customer Experience & Support
+                    </p>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right industry-arrow"></i>
+
+            </a>
+
 
         </div>
 
     </div>
 
-</section>           
-<!-- ========================================= -->
-<!-- RECRUITMENT PROCESS -->
-<!-- ========================================= -->
+</section>
 
-<section class="process" id="process">
+
+
+<!-- =====================================================
+     RECRUITMENT PROCESS
+====================================================== -->
+
+<section class="section process-section">
 
     <div class="container">
 
-        <div class="section-title">
 
-            <span class="section-subtitle">
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
                 OUR PROCESS
             </span>
 
-            <h2>Simple & Effective Recruitment Process</h2>
-
-            <p>
-                Our proven hiring process helps companies recruit
-                the best candidates quickly and efficiently.
-            </p>
-
-        </div>
-
-        <div class="process-grid">
-
-            <div class="process-card">
-                <div class="process-number">01</div>
-                <i class="fa-solid fa-file-circle-check"></i>
-                <h3>Requirement Analysis</h3>
-                <p>Understanding client hiring requirements.</p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">02</div>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h3>Talent Sourcing</h3>
-                <p>Finding qualified professionals through multiple channels.</p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">03</div>
-                <i class="fa-solid fa-user-check"></i>
-                <h3>Screening</h3>
-                <p>Technical, HR and background screening.</p>
-            </div>
-
-            <div class="process-card">
-                <div class="process-number">04</div>
-                <i class="fa-solid fa-handshake"></i>
-                <h3>Final Selection</h3>
-                <p>Interview coordination and successful onboarding.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- FEATURED JOBS -->
-<!-- ========================================= -->
-
-<section class="jobs" id="jobs">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="section-subtitle">
-                LATEST OPENINGS
-            </span>
-
-            <h2>Featured Jobs</h2>
-
-        </div>
-
-        <div class="jobs-grid">
-
-            <div class="job-card">
-
-                <span class="job-type">Full Time</span>
-
-                <h3>Software Developer</h3>
-
-                <p><i class="fa-solid fa-location-dot"></i> Bengaluru</p>
-
-                <p><i class="fa-solid fa-money-bill"></i> ₹8 - ₹14 LPA</p>
-
-                <a href="#" class="btn">Apply Now</a>
-
-            </div>
-
-            <div class="job-card">
-
-                <span class="job-type">Urgent</span>
-
-                <h3>HR Executive</h3>
-
-                <p><i class="fa-solid fa-location-dot"></i> Gurugram</p>
-
-                <p><i class="fa-solid fa-money-bill"></i> ₹4 - ₹6 LPA</p>
-
-                <a href="#" class="btn">Apply Now</a>
-
-            </div>
-
-            <div class="job-card">
-
-                <span class="job-type">Hybrid</span>
-
-                <h3>Digital Marketing Manager</h3>
-
-                <p><i class="fa-solid fa-location-dot"></i> Noida</p>
-
-                <p><i class="fa-solid fa-money-bill"></i> ₹7 - ₹12 LPA</p>
-
-                <a href="#" class="btn">Apply Now</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- TEAM -->
-<!-- ========================================= -->
-
-<section class="team">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="section-subtitle">
-                OUR TEAM
-            </span>
-
-            <h2>Meet Our Recruitment Experts</h2>
-
-        </div>
-
-        <div class="team-grid">
-
-            <div class="team-card">
-
-                <img src="images/team/team1.jpg" alt="CEO">
-
-                <h3>Touseef Malik</h3>
-
-                <span>Managing Director</span>
-
-            </div>
-
-            <div class="team-card">
-
-                <img src="images/team/team2.jpg" alt="HR">
-
-                <h3>Mohd Irfan</h3>
-
-                <span>HR Director</span>
-
-            </div>
-
-            <div class="team-card">
-
-                <img src="images/team/team3.jpg" alt="Recruiter">
-
-                <h3>Amit Singh</h3>
-
-                <span>Senior Recruiter</span>
-
-            </div>
-
-            <div class="team-card">
-
-                <img src="images/team/team4.jpg" alt="Consultant">
-
-                <h3>Neha Sharma</h3>
-
-                <span>Recruitment Consultant</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- ACHIEVEMENTS -->
-<!-- ========================================= -->
-
-<section class="achievements">
-
-    <div class="container">
-
-        <div class="achievement-grid">
-
-            <div class="achievement-card">
-                <h2>25000+</h2>
-                <p>Candidates Placed</p>
-            </div>
-
-            <div class="achievement-card">
-                <h2>500+</h2>
-                <p>Corporate Clients</p>
-            </div>
-
-            <div class="achievement-card">
-                <h2>98%</h2>
-                <p>Client Satisfaction</p>
-            </div>
-
-            <div class="achievement-card">
-                <h2>15+</h2>
-                <p>Years Experience</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- TESTIMONIALS -->
-<!-- ========================================= -->
-
-<section class="testimonials">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="section-subtitle">
-                TESTIMONIALS
-            </span>
-
-            <h2>What Clients Say</h2>
-
-        </div>
-
-        <div class="testimonial-grid">
-
-            <div class="testimonial-card">
-
-                <p>
-
-                    "Excellent recruitment partner.
-                    They helped us hire skilled professionals
-                    within a very short time."
-
-                </p>
-
-                <h4>★★★★★</h4>
-
-                <h3>ABC Technologies</h3>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <p>
-
-                    "Professional HR team with excellent
-                    communication and quality candidates."
-
-                </p>
-
-                <h4>★★★★★</h4>
-
-                <h3>XYZ Industries</h3>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <p>
-
-                    "Highly recommended for permanent
-                    and executive hiring."
-
-                </p>
-
-                <h4>★★★★★</h4>
-
-                <h3>Global Solutions Pvt Ltd</h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>      
-<!-- ========================================= -->
-<!-- CLIENT LOGOS -->
-<!-- ========================================= -->
-
-<section class="clients" id="clients">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="section-subtitle">
-                OUR CLIENTS
-            </span>
-
-            <h2>Trusted By Leading Companies</h2>
-
-            <p>
-                We proudly partner with organizations across India
-                to deliver exceptional recruitment solutions.
-            </p>
-
-        </div>
-
-        <div class="clients-grid">
-
-            <div class="client-card">
-                <img src="images/clients/client1.png" alt="Client Logo">
-            </div>
-
-            <div class="client-card">
-                <img src="images/clients/client2.png" alt="Client Logo">
-            </div>
-
-            <div class="client-card">
-                <img src="images/clients/client3.png" alt="Client Logo">
-            </div>
-
-            <div class="client-card">
-                <img src="images/clients/client4.png" alt="Client Logo">
-            </div>
-
-            <div class="client-card">
-                <img src="images/clients/client5.png" alt="Client Logo">
-            </div>
-
-            <div class="client-card">
-                <img src="images/clients/client6.png" alt="Client Logo">
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- FAQ -->
-<!-- ========================================= -->
-
-<section class="faq" id="faq">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="section-subtitle">
-                FAQ
-            </span>
-
-            <h2>Frequently Asked Questions</h2>
-
-        </div>
-
-        <div class="faq-container">
-
-            <div class="faq-item">
-
-                <h3>
-                    How long does the recruitment process take?
-                </h3>
-
-                <p>
-                    Depending on the role, hiring generally takes
-                    between 7–30 working days.
-                </p>
-
-            </div>
-
-            <div class="faq-item">
-
-                <h3>
-                    Do you provide contract staffing?
-                </h3>
-
-                <p>
-                    Yes, we offer temporary staffing, contract
-                    staffing and payroll solutions.
-                </p>
-
-            </div>
-
-            <div class="faq-item">
-
-                <h3>
-                    Which industries do you serve?
-                </h3>
-
-                <p>
-                    IT, Banking, Manufacturing, Healthcare,
-                    Construction, Retail, Aviation, Logistics,
-                    Hospitality and many more.
-                </p>
-
-            </div>
-
-            <div class="faq-item">
-
-                <h3>
-                    Can job seekers upload their resume?
-                </h3>
-
-                <p>
-                    Yes. Candidates can upload resumes and apply
-                    directly through our recruitment portal.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- NEWSLETTER -->
-<!-- ========================================= -->
-
-<section class="newsletter">
-
-    <div class="container">
-
-        <div class="newsletter-box">
-
             <h2>
-                Subscribe To Our Newsletter
+                A simpler way to find
+                the right talent.
             </h2>
 
             <p>
-                Get the latest job opportunities,
-                recruitment news and hiring updates.
+
+                Our structured recruitment process keeps
+                employers and candidates informed at every
+                important stage.
+
             </p>
 
-            <form>
+        </div>
 
-                <input
-                    type="email"
-                    placeholder="info@company.com">
 
-                <button class="btn">
-                    Subscribe
+
+        <div class="process-grid">
+
+
+            <!-- STEP 01 -->
+
+            <div class="process-step reveal">
+
+                <div class="process-line"></div>
+
+                <div class="process-circle">
+                    01
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+
+                    We understand your hiring requirements,
+                    business objectives, role expectations
+                    and ideal candidate profile.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- STEP 02 -->
+
+            <div class="process-step reveal">
+
+                <div class="process-line"></div>
+
+                <div class="process-circle">
+                    02
+                </div>
+
+                <h3>
+                    Search
+                </h3>
+
+                <p>
+
+                    Our recruitment team searches through
+                    suitable talent pools and identifies
+                    professionals matching the requirement.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- STEP 03 -->
+
+            <div class="process-step reveal">
+
+                <div class="process-line"></div>
+
+                <div class="process-circle">
+                    03
+                </div>
+
+                <h3>
+                    Evaluate
+                </h3>
+
+                <p>
+
+                    Candidates are evaluated based on skills,
+                    experience, role suitability and overall
+                    professional fit.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- STEP 04 -->
+
+            <div class="process-step reveal">
+
+                <div class="process-circle">
+                    04
+                </div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+
+                    We facilitate the interview, selection
+                    and joining process to create a smooth
+                    experience for everyone involved.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PART 4 — FEATURED JOBS + CANDIDATES + EMPLOYERS
+                 + TEAM + TESTIMONIALS
+====================================================== -->
+
+
+<!-- =====================================================
+     FEATURED JOBS
+====================================================== -->
+
+<section class="section jobs-section"
+         id="featured-jobs">
+
+    <div class="container">
+
+
+        <div class="section-heading-row reveal">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    LATEST OPPORTUNITIES
+                </span>
+
+                <h2>
+                    Featured job opportunities.
+                </h2>
+
+                <p>
+                    Explore selected opportunities and take
+                    the next step in your professional journey.
+                </p>
+
+            </div>
+
+
+            <a href="#jobs"
+               class="text-link">
+
+                View All Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <div class="jobs-list">
+
+
+            <!-- JOB 01 -->
+
+            <article class="job-card reveal">
+
+                <div class="job-company-logo">
+                    HR
+                </div>
+
+
+                <div class="job-main">
+
+                    <div class="job-top">
+
+                        <span class="job-tag">
+                            FULL TIME
+                        </span>
+
+                        <span class="job-date">
+                            <i class="fa-regular fa-clock"></i>
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        HR Manager
+                    </h3>
+
+
+                    <p class="job-company">
+                        Leading Corporate Organisation
+                    </p>
+
+
+                    <div class="job-meta">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Noida / Delhi NCR
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-briefcase"></i>
+                            5+ Years
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                            Human Resources
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="job-action">
+
+                    <a href="#contact"
+                       class="btn btn-blue">
+
+                        Apply Now
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- JOB 02 -->
+
+            <article class="job-card reveal">
+
+                <div class="job-company-logo">
+                    IT
+                </div>
+
+
+                <div class="job-main">
+
+                    <div class="job-top">
+
+                        <span class="job-tag">
+                            FULL TIME
+                        </span>
+
+                        <span class="job-date">
+                            <i class="fa-regular fa-clock"></i>
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Senior Software Developer
+                    </h3>
+
+
+                    <p class="job-company">
+                        Technology & Digital Services Company
+                    </p>
+
+
+                    <div class="job-meta">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Gurugram
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-briefcase"></i>
+                            4–7 Years
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                            Information Technology
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="job-action">
+
+                    <a href="#contact"
+                       class="btn btn-blue">
+
+                        Apply Now
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- JOB 03 -->
+
+            <article class="job-card reveal">
+
+                <div class="job-company-logo">
+                    FM
+                </div>
+
+
+                <div class="job-main">
+
+                    <div class="job-top">
+
+                        <span class="job-tag">
+                            FULL TIME
+                        </span>
+
+                        <span class="job-date">
+                            <i class="fa-regular fa-clock"></i>
+                            Featured
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Finance Manager
+                    </h3>
+
+
+                    <p class="job-company">
+                        Established Business Group
+                    </p>
+
+
+                    <div class="job-meta">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Mumbai
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-briefcase"></i>
+                            6+ Years
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                            Finance & Accounts
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="job-action">
+
+                    <a href="#contact"
+                       class="btn btn-blue">
+
+                        Apply Now
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- JOB 04 -->
+
+            <article class="job-card reveal">
+
+                <div class="job-company-logo">
+                    TA
+                </div>
+
+
+                <div class="job-main">
+
+                    <div class="job-top">
+
+                        <span class="job-tag">
+                            CONTRACT
+                        </span>
+
+                        <span class="job-date">
+                            <i class="fa-regular fa-clock"></i>
+                            Hiring
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Talent Acquisition Specialist
+                    </h3>
+
+
+                    <p class="job-company">
+                        Fast-Growing Services Organisation
+                    </p>
+
+
+                    <div class="job-meta">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Delhi NCR
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-briefcase"></i>
+                            2–5 Years
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                            Talent Acquisition
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="job-action">
+
+                    <a href="#contact"
+                       class="btn btn-blue">
+
+                        Apply Now
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="jobs-bottom">
+
+            <a href="#contact"
+               class="btn btn-outline-dark">
+
+                Submit Your CV
+
+                <i class="fa-solid fa-upload"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CANDIDATE CTA
+====================================================== -->
+
+<section class="candidate-section"
+         id="candidate">
+
+    <div class="container candidate-grid">
+
+
+        <div class="candidate-content reveal">
+
+            <span class="section-label light-label">
+                FOR CANDIDATES
+            </span>
+
+
+            <h2>
+                Your next opportunity
+                could be closer than
+                you think.
+            </h2>
+
+
+            <p>
+
+                Whether you're actively looking for a new role
+                or simply exploring your next career move, our
+                recruitment specialists can connect you with
+                opportunities aligned with your skills and
+                ambitions.
+
+            </p>
+
+
+            <div class="candidate-points">
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Access relevant opportunities
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Professional career support
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Confidential conversations
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Expert recruitment guidance
+                </span>
+
+            </div>
+
+
+            <div class="candidate-buttons">
+
+                <a href="#featured-jobs"
+                   class="btn btn-white">
+
+                    Search Jobs
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="#contact"
+                   class="btn btn-outline-white">
+
+                    Submit CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="candidate-visual reveal">
+
+            <div class="candidate-stat-card">
+
+                <div class="candidate-stat-icon">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+                <strong>
+                    5,000+
+                </strong>
+
+                <span>
+                    Candidates Connected
+                </span>
+
+            </div>
+
+
+            <div class="candidate-quote-card">
+
+                <i class="fa-solid fa-quote-left"></i>
+
+                <p>
+                    "The right opportunity can change
+                    the direction of a career."
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EMPLOYER SECTION
+====================================================== -->
+
+<section class="section employer-section"
+         id="employer">
+
+    <div class="container employer-grid">
+
+
+        <div class="employer-visual reveal">
+
+            <div class="employer-card-main">
+
+                <div class="employer-card-header">
+
+                    <span>
+                        HIRING DASHBOARD
+                    </span>
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+
+                <div class="employer-chart">
+
+                    <div
+                        class="chart-bar"
+                        style="height:45%;">
+                    </div>
+
+                    <div
+                        class="chart-bar"
+                        style="height:62%;">
+                    </div>
+
+                    <div
+                        class="chart-bar"
+                        style="height:52%;">
+                    </div>
+
+                    <div
+                        class="chart-bar"
+                        style="height:80%;">
+                    </div>
+
+                    <div
+                        class="chart-bar"
+                        style="height:72%;">
+                    </div>
+
+                    <div
+                        class="chart-bar"
+                        style="height:94%;">
+                    </div>
+
+                </div>
+
+
+                <div class="employer-chart-labels">
+
+                    <span>
+                        Jan
+                    </span>
+
+                    <span>
+                        Feb
+                    </span>
+
+                    <span>
+                        Mar
+                    </span>
+
+                    <span>
+                        Apr
+                    </span>
+
+                    <span>
+                        May
+                    </span>
+
+                    <span>
+                        Jun
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="employer-small-card">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <div>
+
+                    <strong>
+                        Quality Talent
+                    </strong>
+
+                    <span>
+                        Matched to your requirement
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="employer-content reveal">
+
+            <span class="section-label">
+                FOR EMPLOYERS
+            </span>
+
+
+            <h2>
+                Build a team that
+                moves your business
+                <span>forward.</span>
+            </h2>
+
+
+            <p>
+
+                Hiring the right people is one of the most
+                important decisions a business makes. Our
+                specialists help you identify, assess and
+                connect with professionals who can contribute
+                to your organisation's growth.
+
+            </p>
+
+
+            <div class="employer-features">
+
+
+                <div class="employer-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Targeted Candidate Search
+                        </h3>
+
+                        <p>
+                            We identify talent aligned with
+                            your role and business needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="employer-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-filter-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Quality Screening
+                        </h3>
+
+                        <p>
+                            Professional evaluation before
+                            candidate recommendations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="employer-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Dedicated Support
+                        </h3>
+
+                        <p>
+                            Responsive communication throughout
+                            the recruitment process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <a href="#contact"
+               class="btn btn-blue">
+
+                Discuss Your Hiring Needs
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TEAM SECTION
+====================================================== -->
+
+<section class="section team-section"
+         id="team">
+
+    <div class="container">
+
+
+        <div class="section-heading-row reveal">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    OUR PEOPLE
+                </span>
+
+                <h2>
+                    Meet our recruitment
+                    leadership team.
+                </h2>
+
+                <p>
+
+                    Experienced professionals dedicated to
+                    creating meaningful connections between
+                    organisations and talent.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="team-grid">
+
+
+            <!-- =================================================
+                 TEAM MEMBER 01
+            ================================================== -->
+
+            <article class="team-card reveal">
+
+                <div class="team-image">
+
+                    <img
+                        src="images/team/team1.jpg"
+                        alt="Touseef Malik - Managing Director">
+
+                    <div class="team-social">
+
+                        <a href="#"
+                           aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="#"
+                           aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="team-info">
+
+                    <span>
+                        LEADERSHIP
+                    </span>
+
+                    <h3>
+                        Touseef Malik
+                    </h3>
+
+                    <p>
+                        Managing Director
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 TEAM MEMBER 02
+            ================================================== -->
+
+            <article class="team-card reveal">
+
+                <div class="team-image">
+
+                    <img
+                        src="images/team/team2.jpg"
+                        alt="Mohd Irfan - HR Director">
+
+                    <div class="team-social">
+
+                        <a href="#"
+                           aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="#"
+                           aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="team-info">
+
+                    <span>
+                        HUMAN RESOURCES
+                    </span>
+
+                    <h3>
+                        Mohd Irfan
+                    </h3>
+
+                    <p>
+                        HR Director
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 TEAM MEMBER 03
+            ================================================== -->
+
+            <article class="team-card reveal">
+
+                <div class="team-image">
+
+                    <img
+                        src="images/team/team3.jpg"
+                        alt="Amit Singh - Senior Recruiter">
+
+                    <div class="team-social">
+
+                        <a href="#"
+                           aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="#"
+                           aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="team-info">
+
+                    <span>
+                        RECRUITMENT
+                    </span>
+
+                    <h3>
+                        Amit Singh
+                    </h3>
+
+                    <p>
+                        Senior Recruiter
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 TEAM MEMBER 04
+            ================================================== -->
+
+            <article class="team-card reveal">
+
+                <div class="team-image">
+
+                    <img
+                        src="images/team/team4.jpg"
+                        alt="Neha Sharma - Recruitment Consultant">
+
+                    <div class="team-social">
+
+                        <a href="#"
+                           aria-label="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="#"
+                           aria-label="Email">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="team-info">
+
+                    <span>
+                        CONSULTING
+                    </span>
+
+                    <h3>
+                        Neha Sharma
+                    </h3>
+
+                    <p>
+                        Recruitment Consultant
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIALS
+====================================================== -->
+
+<section class="section testimonials-section"
+         id="testimonials">
+
+    <div class="container">
+
+
+        <div class="section-heading center reveal">
+
+            <span class="section-label">
+                CLIENT & CANDIDATE STORIES
+            </span>
+
+            <h2>
+                Trusted by people
+                and businesses.
+            </h2>
+
+            <p>
+
+                Professional relationships are at the heart
+                of everything we do.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="testimonial-grid">
+
+
+            <!-- TESTIMONIAL 01 -->
+
+            <article class="testimonial-card reveal">
+
+                <div class="quote-icon">
+
+                    <i class="fa-solid fa-quote-left"></i>
+
+                </div>
+
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <p>
+
+                    "The recruitment team understood our
+                    requirements quickly and presented us
+                    with relevant candidates. Their approach
+                    was professional and responsive throughout."
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="author-avatar">
+                        RK
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Rahul Kapoor
+                        </strong>
+
+                        <span>
+                            HR Head • Corporate Client
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- TESTIMONIAL 02 -->
+
+            <article class="testimonial-card reveal">
+
+                <div class="quote-icon">
+
+                    <i class="fa-solid fa-quote-left"></i>
+
+                </div>
+
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <p>
+
+                    "I received clear guidance at every stage
+                    of the hiring process. The team was helpful,
+                    professional and kept me updated throughout
+                    the process."
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="author-avatar">
+                        AS
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ankit Sharma
+                        </strong>
+
+                        <span>
+                            Technology Professional
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- TESTIMONIAL 03 -->
+
+            <article class="testimonial-card reveal">
+
+                <div class="quote-icon">
+
+                    <i class="fa-solid fa-quote-left"></i>
+
+                </div>
+
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <p>
+
+                    "A dependable recruitment partner with
+                    strong communication and a clear
+                    understanding of our hiring priorities."
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="author-avatar">
+                        PS
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Priya Singh
+                        </strong>
+
+                        <span>
+                            Business Operations Manager
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUSTED PARTNERS
+====================================================== -->
+
+<section class="trusted-section">
+
+    <div class="container">
+
+
+        <div class="trusted-heading">
+
+            <span>
+                TRUSTED BY TEAMS ACROSS INDUSTRIES
+            </span>
+
+        </div>
+
+
+        <div class="trusted-logos">
+
+            <div class="trusted-logo">
+                TECHCORP
+            </div>
+
+            <div class="trusted-logo">
+                NOVA GROUP
+            </div>
+
+            <div class="trusted-logo">
+                INFONEX
+            </div>
+
+            <div class="trusted-logo">
+                PRIMEWORKS
+            </div>
+
+            <div class="trusted-logo">
+                NEXTGEN
+            </div>
+
+            <div class="trusted-logo">
+                GLOBALTECH
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PART 5 — FAQ + CONTACT + NEWSLETTER + FOOTER
+                  + COMPLETE JAVASCRIPT
+====================================================== -->
+
+
+<!-- =====================================================
+     FAQ SECTION
+====================================================== -->
+
+<section class="section faq-section" id="faq">
+
+    <div class="container faq-grid">
+
+        <div class="faq-intro reveal">
+
+            <span class="section-label">
+                FREQUENTLY ASKED QUESTIONS
+            </span>
+
+            <h2>
+                Questions?
+                We have answers.
+            </h2>
+
+            <p>
+                Find answers to some of the most common
+                questions about our recruitment services.
+            </p>
+
+            <a href="#contact" class="btn btn-blue">
+                Ask Our Team
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="faq-list reveal">
+
+
+            <div class="faq-item active">
+
+                <button class="faq-question" type="button">
+
+                    <span>
+                        How can I apply for a job?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
                 </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        You can explore available opportunities
+                        on our website and submit your CV through
+                        our contact or application section.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button">
+
+                    <span>
+                        Can employers submit a hiring requirement?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Employers can contact our recruitment
+                        team and share their hiring requirements.
+                        Our specialists will discuss the suitable
+                        recruitment solution.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button">
+
+                    <span>
+                        Do you provide permanent and contract hiring?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Our services can support permanent
+                        recruitment, contract staffing and other
+                        workforce requirements depending on the
+                        organisation's needs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button">
+
+                    <span>
+                        How can I submit my CV?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Use the Submit CV option and provide your
+                        details. You can also contact our team
+                        directly for further guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question" type="button">
+
+                    <span>
+                        Do you provide HR consulting services?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. HR consulting is one of our service
+                        areas and can cover workforce planning,
+                        recruitment processes and people-related
+                        requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT / CTA SECTION
+====================================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container contact-grid">
+
+
+        <div class="contact-content reveal">
+
+            <span class="section-label light-label">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Let's find the
+                right connection.
+            </h2>
+
+            <p>
+                Whether you're looking for your next career
+                opportunity or searching for the right talent
+                for your organisation, our team is ready to
+                help.
+            </p>
+
+
+            <div class="contact-details">
+
+
+                <a href="tel:+919999999999"
+                   class="contact-detail">
+
+                    <div class="contact-detail-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            CALL US
+                        </span>
+
+                        <strong>
+                            +91 99999 99999
+                        </strong>
+                    </div>
+
+                </a>
+
+
+                <a href="mailto:info@humanresourcerecruitmentagency.com"
+                   class="contact-detail">
+
+                    <div class="contact-detail-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            EMAIL US
+                        </span>
+
+                        <strong>
+                            info@humanresourcerecruitmentagency.com
+                        </strong>
+                    </div>
+
+                </a>
+
+
+                <div class="contact-detail">
+
+                    <div class="contact-detail-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            OUR OFFICE
+                        </span>
+
+                        <strong>
+                            India
+                        </strong>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="contact-socials">
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form-wrapper reveal">
+
+            <div class="contact-form-heading">
+
+                <span>
+                    START A CONVERSATION
+                </span>
+
+                <h3>
+                    Tell us how we can help.
+                </h3>
+
+            </div>
+
+
+            <form id="contactForm"
+                  class="contact-form">
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+91 XXXXX XXXXX"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="enquiryType">
+                            I am a
+                        </label>
+
+                        <select
+                            id="enquiryType"
+                            name="enquiryType"
+                            required>
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option value="candidate">
+                                Candidate
+                            </option>
+
+                            <option value="employer">
+                                Employer
+                            </option>
+
+                            <option value="partner">
+                                Business Partner
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="How can we help you?"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="resume">
+                        Resume / CV
+                        <span>
+                            (Optional)
+                        </span>
+                    </label>
+
+                    <div class="file-upload">
+
+                        <input
+                            type="file"
+                            id="resume"
+                            name="resume"
+                            accept=".pdf,.doc,.docx">
+
+                        <label for="resume"
+                               class="file-upload-label">
+
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            <span>
+                                Upload your CV
+                            </span>
+
+                            <small>
+                                PDF, DOC or DOCX
+                            </small>
+
+                        </label>
+
+                    </div>
+
+                    <div id="fileName"
+                         class="file-name">
+                    </div>
+
+                </div>
+
+
+                <div class="form-consent">
+
+                    <input
+                        type="checkbox"
+                        id="consent"
+                        required>
+
+                    <label for="consent">
+
+                        I agree to be contacted regarding
+                        my enquiry and recruitment opportunities.
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-blue form-submit">
+
+                    Send Enquiry
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+
+                <div id="formMessage"
+                     class="form-message">
+                </div>
+
 
             </form>
 
@@ -1083,245 +5257,1107 @@ Search Jobs
 
 </section>
 
-<!-- ========================================= -->
-<!-- CONTACT SECTION -->
-<!-- ========================================= -->
 
-<section class="contact" id="contact">
 
-    <div class="container">
+<!-- =====================================================
+     NEWSLETTER
+====================================================== -->
 
-        <div class="section-title">
+<section class="newsletter-section">
 
-            <span class="section-subtitle">
-                CONTACT US
-            </span>
+    <div class="container newsletter-inner">
 
-            <h2>Let's Build Your Workforce Together</h2>
 
-            <p>
-                Contact our recruitment specialists for hiring
-                solutions and career opportunities.
-            </p>
+        <div class="newsletter-content">
 
-        </div>
+            <div class="newsletter-icon">
 
-        <div class="contact-grid">
-
-            <div class="contact-info">
-
-                <div class="info-box">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <div>
-
-                        <h4>Office Address</h4>
-
-                        <p>ang india ltd plot-4 sec-90, nearby dixon pvt ltd 201305, Noida  </p>
-
-                    </div>
-
-                </div>
-
-                <div class="info-box">
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    <div>
-
-                        <h4>Phone</h4>
-
-                        <p>+91 84478 67919</p>
-
-                    </div>
-
-                </div>
-
-                <div class="info-box">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <div>
-
-                        <h4>Email</h4>
-
-                        <p>info@company.com</p>
-
-                    </div>
-
-                </div>
-
-                <div class="info-box">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <div>
-
-                        <h4>Working Hours</h4>
-
-                        <p>Mon - Sat : 9 AM - 6 PM</p>
-
-                    </div>
-
-                </div>
+                <i class="fa-solid fa-envelope-open-text"></i>
 
             </div>
 
-            <div class="contact-form">
+            <div>
 
-                <form>
+                <span>
+                    STAY CONNECTED
+                </span>
 
-                    <input type="text" placeholder="Full Name" required>
-
-                    <input type="email" placeholder="Email Address" required>
-
-                    <input type="text" placeholder="Phone Number">
-
-                    <input type="text" placeholder="Company Name">
-
-                    <textarea rows="6" placeholder="Your Message"></textarea>
-
-                    <button class="btn">
-                        Send Message
-                    </button>
-
-                </form>
+                <h3>
+                    Get the latest opportunities
+                    and recruitment insights.
+                </h3>
 
             </div>
 
         </div>
+
+
+        <form id="newsletterForm"
+              class="newsletter-form">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required>
+
+            <button type="submit">
+
+                Subscribe
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
 
     </div>
 
 </section>
 
-<!-- ========================================= -->
-<!-- GOOGLE MAP -->
-<!-- ========================================= -->
 
-<section class="map">
 
-    <iframe
-        src="https://www.google.com/maps/embed?pb="
-        width="100%"
-        height="450"
-        style="border:0;"
-        loading="lazy">
-    </iframe>
+<!-- =====================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="final-cta">
+
+    <div class="container final-cta-inner">
+
+
+        <div class="final-cta-decoration">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <div class="final-cta-content">
+
+            <span>
+                READY FOR THE NEXT STEP?
+            </span>
+
+            <h2>
+                Great people build
+                great organisations.
+            </h2>
+
+            <p>
+                Let's create the right connection.
+            </p>
+
+        </div>
+
+
+        <div class="final-cta-buttons">
+
+            <a href="#contact"
+               class="btn btn-white">
+
+                Talk to Us
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a href="#featured-jobs"
+               class="btn btn-outline-white">
+
+                Explore Jobs
+
+            </a>
+
+        </div>
+
+
+    </div>
 
 </section>
 
-<!-- ========================================= -->
-<!-- FOOTER -->
-<!-- ========================================= -->
 
-<footer>
 
-<div class="container">
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-<div class="footer-grid">
+<footer class="site-footer">
 
-<div>
+    <div class="container">
 
-<h3>HR RecruitX</h3>
 
-<p>
+        <div class="footer-main">
 
-Professional Recruitment &
-Staffing Solutions Across India.
 
-</p>
+            <!-- BRAND -->
 
-</div>
+            <div class="footer-brand">
 
-<div>
+                <a href="#home"
+                   class="footer-logo">
 
-<h4>Quick Links</h4>
+                    <span class="logo-mark">
+                        HR
+                    </span>
 
-<ul>
+                    <span class="logo-text">
 
-<li><a href="#">Home</a></li>
+                        <strong>
+                            HUMAN RESOURCE
+                        </strong>
 
-<li><a href="#">About</a></li>
+                        <small>
+                            RECRUITMENT AGENCY
+                        </small>
 
-<li><a href="#">Services</a></li>
+                    </span>
 
-<li><a href="#">Jobs</a></li>
+                </a>
 
-<li><a href="#">Contact</a></li>
 
-</ul>
+                <p>
 
-</div>
+                    Connecting talented professionals with
+                    organisations through professional,
+                    transparent and people-focused recruitment
+                    solutions.
 
-<div>
+                </p>
 
-<h4>Services</h4>
 
-<ul>
+                <div class="footer-socials">
 
-<li>Permanent Hiring</li>
+                    <a href="#"
+                       aria-label="LinkedIn">
 
-<li>Executive Search</li>
+                        <i class="fa-brands fa-linkedin-in"></i>
 
-<li>Payroll</li>
+                    </a>
 
-<li>Contract Staffing</li>
+                    <a href="#"
+                       aria-label="Instagram">
 
-<li>Campus Hiring</li>
+                        <i class="fa-brands fa-instagram"></i>
 
-</ul>
+                    </a>
 
-</div>
+                    <a href="#"
+                       aria-label="Facebook">
 
-<div>
+                        <i class="fa-brands fa-facebook-f"></i>
 
-<h4>Follow Us</h4>
+                    </a>
 
-<div class="social">
+                    <a href="#"
+                       aria-label="X">
 
-<a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <i class="fa-brands fa-x-twitter"></i>
 
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </a>
 
-<a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
 
-<a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
 
-</div>
 
-</div>
 
-</div>
+            <!-- COMPANY -->
 
-<hr>
+            <div class="footer-column">
 
-<div class="copyright">
+                <h4>
+                    Company
+                </h4>
 
-<p>
+                <a href="#about">
+                    About Us
+                </a>
 
-© 2026 HR Recruit.
-All Rights Reserved.
+                <a href="#vision">
+                    Our Vision
+                </a>
 
-</p>
+                <a href="#team">
+                    Our Team
+                </a>
 
-</div>
+                <a href="#testimonials">
+                    Testimonials
+                </a>
 
-</div>
+                <a href="#contact">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h4>
+                    Services
+                </h4>
+
+                <a href="#services">
+                    Permanent Hiring
+                </a>
+
+                <a href="#services">
+                    Contract Staffing
+                </a>
+
+                <a href="#services">
+                    Executive Search
+                </a>
+
+                <a href="#services">
+                    IT Recruitment
+                </a>
+
+                <a href="#services">
+                    HR Consulting
+                </a>
+
+            </div>
+
+
+
+            <!-- FOR YOU -->
+
+            <div class="footer-column">
+
+                <h4>
+                    For You
+                </h4>
+
+                <a href="#featured-jobs">
+                    Search Jobs
+                </a>
+
+                <a href="#candidate">
+                    For Candidates
+                </a>
+
+                <a href="#employer">
+                    For Employers
+                </a>
+
+                <a href="#contact">
+                    Submit CV
+                </a>
+
+                <a href="#faq">
+                    FAQs
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column footer-contact">
+
+                <h4>
+                    Contact
+                </h4>
+
+
+                <a href="tel:+919999999999">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +91 99999 99999
+
+                </a>
+
+
+                <a href="mailto:info@humanresourcerecruitmentagency.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    info@humanresourcerecruitmentagency.com
+
+                </a>
+
+
+                <span>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    India
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                Human Resource Recruitment Agency.
+                All Rights Reserved.
+            </p>
+
+
+            <div class="footer-legal">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms & Conditions
+                </a>
+
+                <a href="#">
+                    Cookie Policy
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </footer>
 
-<!-- Back To Top -->
 
-<a href="#" class="top-btn">
 
-<i class="fa-solid fa-arrow-up"></i>
+<!-- =====================================================
+     WHATSAPP FLOATING BUTTON
+====================================================== -->
 
-</a>  
-  
-</section>
-  
+<a href="https://wa.me/919999999999"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat on WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <span>
+        Chat With Us
+    </span>
+
+</a>
+
+
+
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- =====================================================
+     MOBILE MENU OVERLAY
+====================================================== -->
+
+<div id="menuOverlay"
+     class="menu-overlay">
+</div>
+
+
+
+<!-- =====================================================
+     COMPLETE JAVASCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* ==================================================
+       MOBILE NAVIGATION
+    ================================================== */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const menuOverlay =
+        document.getElementById("menuOverlay");
+
+    const mobileLinks =
+        document.querySelectorAll(".mobile-menu a");
+
+
+    function closeMobileMenu() {
+
+        if (mobileMenu) {
+            mobileMenu.classList.remove("active");
+        }
+
+        if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+        }
+
+        if (menuToggle) {
+            menuToggle.classList.remove("active");
+        }
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+
+    if (menuToggle && mobileMenu) {
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                mobileMenu.classList.toggle("active");
+
+                if (menuOverlay) {
+                    menuOverlay.classList.toggle("active");
+                }
+
+                menuToggle.classList.toggle("active");
+
+                document.body.classList.toggle(
+                    "menu-open"
+                );
+
+            }
+        );
+
+    }
+
+
+    if (menuOverlay) {
+
+        menuOverlay.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    }
+
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+
+    /* ==================================================
+       STICKY HEADER
+    ================================================== */
+
+    const header =
+        document.querySelector(".site-header");
+
+
+    function handleHeader() {
+
+        if (!header) return;
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        handleHeader,
+        { passive: true }
+    );
+
+    handleHeader();
+
+
+
+    /* ==================================================
+       SMOOTH SCROLL
+    ================================================== */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(function (anchor) {
+
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(targetId);
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+
+                    const headerHeight =
+                        header
+                            ? header.offsetHeight
+                            : 0;
+
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerHeight -
+                        10;
+
+
+                    window.scrollTo({
+
+                        top: targetPosition,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+    /* ==================================================
+       COUNTER ANIMATION
+    ================================================== */
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+
+    let countersStarted = false;
+
+
+    function animateCounters() {
+
+        if (countersStarted) return;
+
+        const statsSection =
+            document.querySelector(".stats-section");
+
+
+        if (!statsSection) return;
+
+
+        const sectionTop =
+            statsSection.getBoundingClientRect().top;
+
+
+        if (
+            sectionTop <
+            window.innerHeight * 0.85
+        ) {
+
+            countersStarted = true;
+
+
+            counters.forEach(function (counter) {
+
+                const target =
+                    Number(
+                        counter.dataset.target
+                    );
+
+
+                let current = 0;
+
+                const duration = 1800;
+
+                const increment =
+                    target / (duration / 16);
+
+
+                function updateCounter() {
+
+                    current += increment;
+
+
+                    if (current < target) {
+
+                        counter.textContent =
+                            Math.floor(current).toLocaleString();
+
+                        requestAnimationFrame(
+                            updateCounter
+                        );
+
+                    } else {
+
+                        counter.textContent =
+                            target.toLocaleString() + "+";
+
+                    }
+
+                }
+
+
+                updateCounter();
+
+            });
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        animateCounters,
+        { passive: true }
+    );
+
+    animateCounters();
+
+
+
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "revealed"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* ==================================================
+       FAQ ACCORDION
+    ================================================== */
+
+    const faqItems =
+        document.querySelectorAll(".faq-item");
+
+
+    faqItems.forEach(function (item) {
+
+        const question =
+            item.querySelector(".faq-question");
+
+
+        question.addEventListener(
+            "click",
+            function () {
+
+                const wasActive =
+                    item.classList.contains("active");
+
+
+                faqItems.forEach(function (otherItem) {
+
+                    otherItem.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                if (!wasActive) {
+
+                    item.classList.add("active");
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+    /* ==================================================
+       FILE UPLOAD NAME
+    ================================================== */
+
+    const resumeInput =
+        document.getElementById("resume");
+
+    const fileName =
+        document.getElementById("fileName");
+
+
+    if (resumeInput && fileName) {
+
+        resumeInput.addEventListener(
+            "change",
+            function () {
+
+                if (this.files.length > 0) {
+
+                    fileName.textContent =
+                        "Selected file: " +
+                        this.files[0].name;
+
+                } else {
+
+                    fileName.textContent = "";
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       CONTACT FORM
+    ================================================== */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const formMessage =
+        document.getElementById("formMessage");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (formMessage) {
+
+                    formMessage.className =
+                        "form-message success";
+
+                    formMessage.textContent =
+                        "Thank you! Your enquiry has been received.";
+
+                }
+
+
+                contactForm.reset();
+
+
+                if (fileName) {
+
+                    fileName.textContent = "";
+
+                }
+
+
+                setTimeout(function () {
+
+                    if (formMessage) {
+
+                        formMessage.textContent =
+                            "";
+
+                        formMessage.className =
+                            "form-message";
+
+                    }
+
+                }, 5000);
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       NEWSLETTER FORM
+    ================================================== */
+
+    const newsletterForm =
+        document.getElementById(
+            "newsletterForm"
+        );
+
+
+    if (newsletterForm) {
+
+        newsletterForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document.getElementById(
+                        "newsletterEmail"
+                    );
+
+
+                if (email && email.value.trim()) {
+
+                    alert(
+                        "Thank you for subscribing!"
+                    );
+
+                    email.value = "";
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       BACK TO TOP
+    ================================================== */
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    function toggleBackToTop() {
+
+        if (!backToTop) return;
+
+
+        if (window.scrollY > 500) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        toggleBackToTop,
+        { passive: true }
+    );
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+    toggleBackToTop();
+
+
+
+    /* ==================================================
+       CURRENT YEAR
+    ================================================== */
+
+    const currentYear =
+        document.getElementById(
+            "currentYear"
+        );
+
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+
+    /* ==================================================
+       ACTIVE NAVIGATION ON SCROLL
+    ================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+    const navLinks =
+        document.querySelectorAll(
+            ".main-nav a"
+        );
+
+
+    function updateActiveNav() {
+
+        let currentSection = "";
+
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 160;
+
+
+            if (
+                window.scrollY >=
+                sectionTop
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (
+                href === "#" +
+                currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNav,
+        { passive: true }
+    );
+
+
+    updateActiveNav();
+
+
+
+    /* ==================================================
+       ESCAPE KEY — CLOSE MOBILE MENU
+    ================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+});
+
+</script>
+
 </body>
-
 </html>
