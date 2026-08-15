@@ -1758,7 +1758,152 @@ body {
     }
 
 }
-      
+/* =====================================================
+   FINAL FIX — HORIZONTAL HERO SLIDER
+===================================================== */
+
+/* MAIN SLIDER */
+section.hero-slider {
+    position: relative !important;
+    width: 100% !important;
+    height: min(820px, calc(100vh - 75px)) !important;
+    min-height: 650px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+}
+
+
+/* SLIDES WRAPPER */
+section.hero-slider .hero-slides {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    overflow: hidden !important;
+}
+
+
+/* EVERY SLIDE */
+section.hero-slider .hero-slides .hero-slide {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease,
+        transform 7s ease !important;
+}
+
+
+/* ACTIVE SLIDE */
+section.hero-slider .hero-slides .hero-slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+
+    transform: scale(1) !important;
+
+    z-index: 2 !important;
+}
+
+
+/* NON-ACTIVE SLIDES */
+section.hero-slider .hero-slides .hero-slide:not(.active) {
+    z-index: 1 !important;
+}
+
+
+/* OVERLAY */
+section.hero-slider .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 1 !important;
+}
+
+
+/* CONTENT */
+section.hero-slider .hero-slide .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+
+/* ARROWS */
+section.hero-slider .hero-arrow {
+    z-index: 20 !important;
+}
+
+
+/* DOTS */
+section.hero-slider .hero-dots {
+    z-index: 20 !important;
+}
+
+
+/* COUNTER */
+section.hero-slider .hero-counter {
+    z-index: 20 !important;
+}
+
+
+/* SCROLL INDICATOR */
+section.hero-slider .hero-scroll {
+    z-index: 20 !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    section.hero-slider {
+        height: calc(100vh - 72px) !important;
+        min-height: 680px !important;
+    }
+
+    section.hero-slider .hero-slides {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    section.hero-slider .hero-slides .hero-slide {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}      
 </style>
 
 </head>
