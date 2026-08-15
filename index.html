@@ -1306,9 +1306,536 @@
         height: 42px;
         max-width: 220px;
    }
+/* =====================================================
+   PREMIUM RECRUITMENT HERO SLIDER
+====================================================== */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: min(820px, calc(100vh - 75px));
+    min-height: 650px;
+    overflow: hidden;
+    background: #071b34;
 }
 
-    </style>
+.hero-slides {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 7s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+}
+
+
+/* DARK PROFESSIONAL OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 17, 35, .94) 0%,
+            rgba(5, 24, 47, .82) 38%,
+            rgba(5, 24, 47, .48) 68%,
+            rgba(5, 24, 47, .30) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+
+    max-width: 1250px;
+
+    width: 100%;
+
+    padding-left: 7%;
+    padding-right: 7%;
+
+    color: #ffffff;
+}
+
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 17px;
+
+    margin-bottom: 24px;
+
+    border: 1px solid rgba(255,255,255,.28);
+
+    background: rgba(255,255,255,.10);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 50px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+.hero-badge i {
+    color: #f7c948;
+}
+
+
+.hero-content h1 {
+    max-width: 760px;
+
+    margin: 0 0 24px;
+
+    font-size: clamp(42px, 5vw, 76px);
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+.hero-content h1 span {
+    display: inline;
+
+    color: #f7c948;
+}
+
+
+.hero-content p {
+    max-width: 650px;
+
+    margin: 0 0 34px;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color: rgba(255,255,255,.82);
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-buttons .btn {
+    min-height: 54px;
+
+    padding: 0 26px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.btn-primary {
+    background: #f7c948;
+
+    color: #071b34;
+
+    border: 2px solid #f7c948;
+
+    font-weight: 800;
+}
+
+
+.btn-primary:hover {
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #071b34;
+
+    transform: translateY(-2px);
+}
+
+
+.btn-outline-light {
+    background: rgba(255,255,255,.05);
+
+    color: #ffffff;
+
+    border: 2px solid rgba(255,255,255,.65);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.btn-outline-light:hover {
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #071b34;
+
+    transform: translateY(-2px);
+}
+
+
+/* ARROWS */
+
+.hero-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    background: rgba(3,17,35,.45);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(12px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.hero-arrow:hover {
+    background: #f7c948;
+
+    border-color: #f7c948;
+
+    color: #071b34;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+.hero-prev {
+    left: 28px;
+}
+
+
+.hero-next {
+    right: 28px;
+}
+
+
+/* DOTS */
+
+.hero-dots {
+    position: absolute;
+
+    bottom: 42px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.45);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.hero-dot.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #f7c948;
+}
+
+
+/* COUNTER */
+
+.hero-counter {
+    position: absolute;
+
+    right: 7%;
+
+    bottom: 38px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+.hero-counter strong {
+    color: #f7c948;
+
+    font-size: 22px;
+}
+
+
+/* SCROLL */
+
+.hero-scroll {
+    position: absolute;
+
+    left: 7%;
+
+    bottom: 34px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+
+.hero-scroll i {
+    color: #f7c948;
+
+    animation: heroScrollArrow 1.5s infinite;
+}
+
+
+@keyframes heroScrollArrow {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .hero-slider {
+        min-height: 680px;
+        height: calc(100vh - 65px);
+    }
+
+    .hero-content {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 8vw, 58px);
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        max-width: 570px;
+    }
+
+    .hero-arrow {
+        width: 44px;
+        height: 44px;
+    }
+
+    .hero-prev {
+        left: 15px;
+    }
+
+    .hero-next {
+        right: 15px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-counter {
+        right: 7%;
+        bottom: 37px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-slider {
+        min-height: 680px;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3,17,35,.92),
+                rgba(3,17,35,.68)
+            );
+    }
+
+    .hero-content {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .hero-badge {
+        font-size: 9px;
+
+        padding: 8px 12px;
+
+        letter-spacing: 1px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+
+        line-height: 1.08;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+
+        line-height: 1.65;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
+
+        min-width: 190px;
+    }
+
+    .hero-arrow {
+        display: none;
+    }
+
+    .hero-dots {
+        bottom: 28px;
+    }
+
+    .hero-counter {
+        display: none;
+    }
+
+}
+            
+</style>
 
 </head>
 
@@ -1324,10 +1851,10 @@
 
     <div class="container top-bar-inner">
 
-        <a href="#jobs">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            Job Search
-        </a>
+      <a href="#featured-jobs">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Job Search
+</a>
 
         <a href="#candidate">
             I'm a Candidate
@@ -1360,15 +1887,14 @@
 
        <!-- OFFICIAL AGENCY LOGO -->
 
-    <a href="#home" class="logo">
+  <a href="#home" class="logo">
 
     <img
-        src="images/logo/logo.png"
+        src="images/logo.png"
         alt="Human Resource Recruitment Agency"
         class="navbar-logo">
 
 </a>
-    </div>
         <!-- NAVIGATION -->
 
         <nav class="nav-links" id="navLinks">
@@ -1506,412 +2032,571 @@
         </div>
 
 
-        <!-- HERO RIGHT -->
+<!-- =====================================================
+     PREMIUM 10-SLIDE RECRUITMENT HERO SLIDER
+====================================================== -->
 
-        <div class="hero-dashboard">
+<section class="hero-slider" id="home">
 
-
-            <div class="dashboard-card">
-
-
-                <div class="dashboard-header">
-
-                    <span class="dashboard-title">
-
-                        Talent Matching
-
-                    </span>
+    <div class="hero-slides">
 
 
-                    <span class="live-status">
+        <!-- SLIDE 01 -->
+        <div class="hero-slide active"
+             style="background-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=90');">
 
-                        LIVE MATCHING
+            <div class="hero-overlay"></div>
 
-                    </span>
+            <div class="container hero-content">
 
-                </div>
+                <span class="hero-badge">
+                    <i class="fa-solid fa-users"></i>
+                    TALENT & RECRUITMENT
+                </span>
 
+                <h1>
+                    Connecting
+                    <span>Great Talent</span>
+                    With Great Opportunities
+                </h1>
 
-                <!-- MATCH 1 -->
+                <p>
+                    Professional recruitment solutions designed
+                    to connect talented professionals with
+                    organisations that are ready to grow.
+                </p>
 
-                <div class="candidate-match">
+                <div class="hero-buttons">
 
-                    <div class="candidate-top">
+                    <a href="#featured-jobs"
+                       class="btn btn-primary">
+                        Explore Jobs
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
-                        <span class="candidate-name">
-
-                            HR Director
-
-                        </span>
-
-                        <span class="match-percent">
-
-                            94%
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="progress-bar">
-
-                        <span style="width:94%;"></span>
-
-                    </div>
-
-
-                    <span class="candidate-meta">
-
-                        Leadership • Strategy • People Management
-
-                    </span>
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Hire Talent
+                    </a>
 
                 </div>
-
-
-                <!-- MATCH 2 -->
-
-                <div class="candidate-match">
-
-                    <div class="candidate-top">
-
-                        <span class="candidate-name">
-
-                            Senior Recruiter
-
-                        </span>
-
-                        <span class="match-percent">
-
-                            91%
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="progress-bar">
-
-                        <span style="width:91%;"></span>
-
-                    </div>
-
-
-                    <span class="candidate-meta">
-
-                        Recruitment • Sourcing • Talent Acquisition
-
-                    </span>
-
-                </div>
-
-
-                <!-- MATCH 3 -->
-
-                <div class="candidate-match">
-
-                    <div class="candidate-top">
-
-                        <span class="candidate-name">
-
-                            HR Business Partner
-
-                        </span>
-
-                        <span class="match-percent">
-
-                            88%
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="progress-bar">
-
-                        <span style="width:88%;"></span>
-
-                    </div>
-
-
-                    <span class="candidate-meta">
-
-                        People Strategy • Culture • Advisory
-
-                    </span>
-
-                </div>
-
 
             </div>
-
-
-            <div class="dashboard-badge">
-
-                <strong>500+</strong>
-
-                Successful Placements
-
-            </div>
-
 
         </div>
 
+
+
+        <!-- SLIDE 02 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-user-tie"></i>
+                    EXECUTIVE RECRUITMENT
+                </span>
+
+                <h1>
+                    Find Leaders Who
+                    <span>Drive Business</span>
+                    Forward
+                </h1>
+
+                <p>
+                    Identify experienced professionals and
+                    leadership talent who can make a meaningful
+                    impact on your organisation.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services"
+                       class="btn btn-primary">
+                        Executive Search
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Talk To Our Team
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 03 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-people-group"></i>
+                    WORKFORCE SOLUTIONS
+                </span>
+
+                <h1>
+                    Build Teams That
+                    <span>Make A Difference</span>
+                </h1>
+
+                <p>
+                    From individual positions to complete
+                    workforce requirements, we help businesses
+                    build high-performing teams.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#employer"
+                       class="btn btn-primary">
+                        Find Talent
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#services"
+                       class="btn btn-outline-light">
+                        Our Services
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 04 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-briefcase"></i>
+                    CAREER OPPORTUNITIES
+                </span>
+
+                <h1>
+                    Your Next Career
+                    <span>Starts Here</span>
+                </h1>
+
+                <p>
+                    Discover meaningful career opportunities
+                    matched with your skills, experience and
+                    professional ambitions.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#featured-jobs"
+                       class="btn btn-primary">
+                        Search Jobs
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+
+                    <a href="#candidate"
+                       class="btn btn-outline-light">
+                        For Candidates
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 05 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    TECHNOLOGY RECRUITMENT
+                </span>
+
+                <h1>
+                    Discover The
+                    <span>Talent Behind Technology</span>
+                </h1>
+
+                <p>
+                    Connect with skilled technology professionals
+                    across software, IT infrastructure, data,
+                    cybersecurity and digital functions.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#expertise"
+                       class="btn btn-primary">
+                        Explore IT Hiring
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Hire IT Talent
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 06 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-building"></i>
+                    EMPLOYER SOLUTIONS
+                </span>
+
+                <h1>
+                    The Right People.
+                    <span>The Right Business.</span>
+                </h1>
+
+                <p>
+                    Strategic recruitment support for organisations
+                    looking to attract, assess and retain exceptional
+                    professionals.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#employer"
+                       class="btn btn-primary">
+                        Hire With Us
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Submit Requirement
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 07 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    CAREER GROWTH
+                </span>
+
+                <h1>
+                    Talent Meets
+                    <span>Opportunity</span>
+                </h1>
+
+                <p>
+                    Get professional recruitment guidance and
+                    discover opportunities that align with your
+                    career goals and potential.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#candidate"
+                       class="btn btn-primary">
+                        Build Your Career
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Submit Your CV
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 08 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-chart-line"></i>
+                    BUSINESS GROWTH
+                </span>
+
+                <h1>
+                    People Power
+                    <span>Business Growth</span>
+                </h1>
+
+                <p>
+                    Strengthen your organisation with professionals
+                    who bring the skills, experience and mindset
+                    required for sustainable growth.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services"
+                       class="btn btn-primary">
+                        Recruitment Solutions
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 09 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-handshake"></i>
+                    TRUSTED RECRUITMENT PARTNER
+                </span>
+
+                <h1>
+                    Recruitment Built On
+                    <span>Trust & Expertise</span>
+                </h1>
+
+                <p>
+                    A people-focused approach that creates
+                    stronger connections between employers
+                    and professionals.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#about"
+                       class="btn btn-primary">
+                        Why Choose Us
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-light">
+                        Let's Connect
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 10 -->
+        <div class="hero-slide"
+             style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=90');">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-badge">
+                    <i class="fa-solid fa-rocket"></i>
+                    YOUR FUTURE STARTS NOW
+                </span>
+
+                <h1>
+                    Let's Build Your
+                    <span>Next Success Story</span>
+                </h1>
+
+                <p>
+                    Whether you are hiring exceptional talent
+                    or searching for your next opportunity,
+                    we are here to create the right connection.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#contact"
+                       class="btn btn-primary">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#featured-jobs"
+                       class="btn btn-outline-light">
+                        View Jobs
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
+
+
+
+    <!-- SLIDER CONTROLS -->
+
+    <button class="hero-arrow hero-prev"
+            type="button"
+            aria-label="Previous slide">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <button class="hero-arrow hero-next"
+            type="button"
+            aria-label="Next slide">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+
+
+    <!-- SLIDE DOTS -->
+
+    <div class="hero-dots">
+
+        <button class="hero-dot active"
+                data-slide="0"
+                aria-label="Slide 1"></button>
+
+        <button class="hero-dot"
+                data-slide="1"
+                aria-label="Slide 2"></button>
+
+        <button class="hero-dot"
+                data-slide="2"
+                aria-label="Slide 3"></button>
+
+        <button class="hero-dot"
+                data-slide="3"
+                aria-label="Slide 4"></button>
+
+        <button class="hero-dot"
+                data-slide="4"
+                aria-label="Slide 5"></button>
+
+        <button class="hero-dot"
+                data-slide="5"
+                aria-label="Slide 6"></button>
+
+        <button class="hero-dot"
+                data-slide="6"
+                aria-label="Slide 7"></button>
+
+        <button class="hero-dot"
+                data-slide="7"
+                aria-label="Slide 8"></button>
+
+        <button class="hero-dot"
+                data-slide="8"
+                aria-label="Slide 9"></button>
+
+        <button class="hero-dot"
+                data-slide="9"
+                aria-label="Slide 10"></button>
+
+    </div>
+
+
+
+    <!-- SLIDE COUNTER -->
+
+    <div class="hero-counter">
+
+        <strong id="currentSlide">
+            01
+        </strong>
+
+        <span>/</span>
+
+        <span>
+            10
+        </span>
+
+    </div>
+
+
+
+    <!-- SCROLL INDICATOR -->
+
+    <a href="#services"
+       class="hero-scroll">
+
+        <span>
+            SCROLL TO EXPLORE
+        </span>
+
+        <i class="fa-solid fa-arrow-down"></i>
+
+    </a>
 
 </section>
-
-
-<!-- =====================================================
-     SEARCH AREA
-====================================================== -->
-
-<div class="container search-wrapper"
-     id="jobs">
-
-
-    <div class="search-card">
-
-
-        <div class="search-title">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            Find your next career opportunity
-
-        </div>
-
-
-        <form class="search-grid"
-              id="jobSearch">
-
-
-            <!-- KEYWORD -->
-
-            <div class="search-field">
-
-                <i class="fa-solid fa-briefcase"></i>
-
-                <input
-                    type="text"
-                    placeholder="Job title or keyword">
-
-
-            </div>
-
-
-            <!-- LOCATION -->
-
-            <div class="search-field">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <input
-                    type="text"
-                    placeholder="City or location">
-
-            </div>
-
-
-            <!-- FUNCTION -->
-
-            <div class="search-field">
-
-                <i class="fa-solid fa-layer-group"></i>
-
-                <select>
-
-                    <option>
-                        Select Function
-                    </option>
-
-                    <option>
-                        Human Resources
-                    </option>
-
-                    <option>
-                        Recruitment
-                    </option>
-
-                    <option>
-                        Talent Acquisition
-                    </option>
-
-                    <option>
-                        Administration
-                    </option>
-
-                    <option>
-                        Finance
-                    </option>
-
-                    <option>
-                        Information Technology
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- JOB TYPE -->
-
-            <div class="search-field">
-
-                <i class="fa-solid fa-clock"></i>
-
-                <select>
-
-                    <option>
-                        Job Type
-                    </option>
-
-                    <option>
-                        Full Time
-                    </option>
-
-                    <option>
-                        Part Time
-                    </option>
-
-                    <option>
-                        Contract
-                    </option>
-
-                    <option>
-                        Temporary
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- SEARCH BUTTON -->
-
-            <button
-                type="submit"
-                class="btn btn-blue">
-
-                Search
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     PART 2 — STATISTICS + ABOUT + VISION/MISSION
-====================================================== -->
-
-
-<!-- =====================================================
-     STATISTICS
-====================================================== -->
-
-<section class="stats-section">
-
-    <div class="container stats-grid">
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-calendar-check"></i>
-            </div>
-
-            <div class="stat-content">
-
-                <strong class="counter"
-                        data-target="10">
-                    0
-                </strong>
-
-                <span>
-                    Years of Experience
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-user-check"></i>
-            </div>
-
-            <div class="stat-content">
-
-                <strong class="counter"
-                        data-target="500">
-                    0
-                </strong>
-
-                <span>
-                    Successful Placements
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-building"></i>
-            </div>
-
-            <div class="stat-content">
-
-                <strong class="counter"
-                        data-target="250">
-                    0
-                </strong>
-
-                <span>
-                    Trusted Employers
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="stat-card">
-
-            <div class="stat-icon">
-                <i class="fa-solid fa-people-group"></i>
-            </div>
-
-            <div class="stat-content">
-
-                <strong class="counter"
-                        data-target="5000">
-                    0
-                </strong>
-
-                <span>
-                    Candidates Connected
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
 
 <!-- =====================================================
      ABOUT HUMAN RESOURCE RECRUITMENT AGENCY
@@ -6361,7 +7046,192 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+/* ==================================================
+   10 SLIDE HERO SLIDER
+================================================== */
 
+const heroSlides =
+    document.querySelectorAll(".hero-slide");
+
+const heroDots =
+    document.querySelectorAll(".hero-dot");
+
+const heroNext =
+    document.querySelector(".hero-next");
+
+const heroPrev =
+    document.querySelector(".hero-prev");
+
+const currentSlide =
+    document.getElementById("currentSlide");
+
+
+let heroIndex = 0;
+
+let heroTimer;
+
+
+function showHeroSlide(index) {
+
+    if (!heroSlides.length) return;
+
+
+    heroSlides.forEach(function(slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    heroDots.forEach(function(dot) {
+
+        dot.classList.remove("active");
+
+    });
+
+
+    heroIndex =
+        (index + heroSlides.length)
+        % heroSlides.length;
+
+
+    heroSlides[heroIndex]
+        .classList.add("active");
+
+
+    if (heroDots[heroIndex]) {
+
+        heroDots[heroIndex]
+            .classList.add("active");
+
+    }
+
+
+    if (currentSlide) {
+
+        currentSlide.textContent =
+            String(heroIndex + 1)
+            .padStart(2, "0");
+
+    }
+
+}
+
+
+function nextHeroSlide() {
+
+    showHeroSlide(heroIndex + 1);
+
+}
+
+
+function previousHeroSlide() {
+
+    showHeroSlide(heroIndex - 1);
+
+}
+
+
+function startHeroSlider() {
+
+    clearInterval(heroTimer);
+
+    heroTimer =
+        setInterval(
+            nextHeroSlide,
+            6000
+        );
+
+}
+
+
+if (heroNext) {
+
+    heroNext.addEventListener(
+        "click",
+        function() {
+
+            nextHeroSlide();
+
+            startHeroSlider();
+
+        }
+    );
+
+}
+
+
+if (heroPrev) {
+
+    heroPrev.addEventListener(
+        "click",
+        function() {
+
+            previousHeroSlide();
+
+            startHeroSlider();
+
+        }
+    );
+
+}
+
+
+heroDots.forEach(function(dot, index) {
+
+    dot.addEventListener(
+        "click",
+        function() {
+
+            showHeroSlide(index);
+
+            startHeroSlider();
+
+        }
+    );
+
+});
+
+
+/* START */
+
+showHeroSlide(0);
+
+startHeroSlider();
+
+
+
+/* ==================================================
+   PAUSE SLIDER ON HOVER
+================================================== */
+
+const heroSlider =
+    document.querySelector(".hero-slider");
+
+
+if (heroSlider) {
+
+    heroSlider.addEventListener(
+        "mouseenter",
+        function() {
+
+            clearInterval(heroTimer);
+
+        }
+    );
+
+
+    heroSlider.addEventListener(
+        "mouseleave",
+        function() {
+
+            startHeroSlider();
+
+        }
+    );
+
+}
+    
 });
 
 </script>
