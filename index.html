@@ -1287,7 +1287,26 @@
 
                 right: 5px;
             }
-        }
+            /* ================================
+   NAVBAR LOGO
+================================ */
+
+.navbar-logo {
+    height: 52px;
+    width: auto;
+    max-width: 280px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar-logo {
+        height: 42px;
+        max-width: 220px;
+   }
+}
 
     </style>
 
@@ -1339,31 +1358,16 @@
 
     <div class="container nav-inner">
 
+       <!-- OFFICIAL AGENCY LOGO -->
 
-        <!-- BRAND -->
+    <a href="#home" class="logo">
 
-        <a href="#" class="brand">
+    <img
+        src="images/logo/logo.png"
+        alt="Human Resource Recruitment Agency"
+        class="navbar-logo">
 
-            <div class="brand-icon">
-
-                <i class="fa-solid fa-people-group"></i>
-
-            </div>
-
-
-            <div class="brand-name">
-
-                HUMAN RESOURCE
-                RECRUITMENT AGENCY
-
-                <span>
-                    PEOPLE • TALENT • OPPORTUNITY
-                </span>
-
-            </div>
-
-        </a>
-
+</a>
 
         <!-- NAVIGATION -->
 
