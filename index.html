@@ -5900,6 +5900,185 @@ button {
     }
 
 }
+    /* =====================================================
+   PROFESSIONAL OUR TEAM SECTION
+===================================================== */
+
+.professional-team-section {
+    width: 100%;
+    padding: 80px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* CONTAINER */
+
+.professional-team-section .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* HEADER */
+
+.professional-team-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 45px;
+}
+
+
+.professional-team-header .section-eyebrow {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #c79532;
+
+    margin-bottom: 12px;
+}
+
+
+.professional-team-header h2 {
+    margin: 0 0 15px;
+
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: #0b2942;
+}
+
+
+.professional-team-header p {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #667085;
+}
+
+
+/* TEAM IMAGE CARD */
+
+.professional-team-card {
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(11, 41, 66, 0.08);
+
+    box-shadow:
+        0 20px 60px rgba(11, 41, 66, 0.12);
+}
+
+
+/* TEAM IMAGE */
+
+.professional-team-image {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .professional-team-section {
+        padding: 60px 0;
+    }
+
+    .professional-team-section .container {
+        padding: 0 20px;
+    }
+
+    .professional-team-header {
+        margin-bottom: 35px;
+    }
+
+    .professional-team-header h2 {
+        font-size: 38px;
+    }
+
+    .professional-team-header p {
+        font-size: 16px;
+    }
+
+    .professional-team-card {
+        border-radius: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .professional-team-section {
+        padding: 45px 0;
+    }
+
+    .professional-team-section .container {
+        padding: 0 12px;
+    }
+
+    .professional-team-header {
+        margin-bottom: 25px;
+    }
+
+    .professional-team-header .section-eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .professional-team-header h2 {
+        font-size: 30px;
+    }
+
+    .professional-team-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .professional-team-card {
+        border-radius: 12px;
+
+        box-shadow:
+            0 10px 30px rgba(11, 41, 66, 0.10);
+    }
+
+    .professional-team-image {
+        width: 100%;
+        height: auto;
+    }
+
+}
 </style>
 
 </head>
@@ -8191,7 +8370,45 @@ button {
                 </div>
 
             </div>
+<!-- =====================================================
+     PROFESSIONAL OUR TEAM SECTION
+===================================================== -->
 
+<section class="professional-team-section" id="team">
+
+    <div class="container">
+
+        <div class="professional-team-header">
+
+            <span class="section-eyebrow">
+                OUR TEAM
+            </span>
+
+            <h2>
+                Meet Our Professional Team
+            </h2>
+
+            <p>
+                Experienced professionals dedicated to connecting
+                talented people with the right opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="professional-team-card">
+
+            <img
+                src="images/team-section.png"
+                alt="Human Resource Recruitment Agency Professional Team"
+                class="professional-team-image"
+                loading="lazy">
+
+        </div>
+
+    </div>
+
+</section>
 
             <!-- EMPLOYER CONTENT -->
 
